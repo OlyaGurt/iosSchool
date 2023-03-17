@@ -106,7 +106,7 @@ class Game {
     func getInfo() {
         print("""
             ***
-            
+
             Attacker Info:
             name: \(self.attacker.name)
             protection: \(self.attacker.protection ?? 0)
@@ -120,5 +120,17 @@ class Game {
             health: \(self.defender.health)
             """
         )
+    }
+
+    func getAttack() {
+        if getSuccess() {
+            let damage = RandomGeterator.getDamage()
+            print("Damage dealt: \(damage)")
+            self.defender.health -= damage
+            self.getInfo()
+        } else {
+            print("Attack is missed")
+            self.getInfo()
+        }
     }
 }
