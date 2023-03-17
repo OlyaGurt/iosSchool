@@ -15,8 +15,12 @@ enum PlayerLevel: Int {
 }
 
 class RandomGeterator {
-    static func getRandom () -> Int {
+    static func getParam() -> Int {
         return Int.random(in: 1...20)
+    }
+
+    static func getDamage() -> Int {
+        return Int.random(in: 20..<maxHealth)
     }
 }
 
@@ -28,8 +32,8 @@ class Player: Creature {
     var level: PlayerLevel
 
     init() {
-        self.attack = RandomGeterator.getRandom()
-        self.protection = RandomGeterator.getRandom()
+        self.attack = RandomGeterator.getParam()
+        self.protection = RandomGeterator.getParam()
         self.health = maxHealth
         self.level = .high
     }
