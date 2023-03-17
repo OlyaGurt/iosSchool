@@ -25,4 +25,10 @@ class Player: Creature {
     var attack: Int
     var protection: Int?
     var health: Int
+
+    init() {
+        self.attack = RandomGeterator.getRandom()
+        self.protection = RandomGeterator.getRandom()
+        self.health = maxHealth
+    }
 }
