@@ -26,16 +26,18 @@ class RandomGeterator {
 
 class Player: Creature {
     private var counterOfHeal = 3
+    var name: String
     var attack: Int
     var protection: Int?
     var health: Int
     var level: PlayerLevel
 
-    init() {
+    init(name: String) {
         self.attack = RandomGeterator.getParam()
         self.protection = RandomGeterator.getParam()
         self.health = maxHealth
         self.level = .high
+        self.name = name
     }
 
     func heal() {
