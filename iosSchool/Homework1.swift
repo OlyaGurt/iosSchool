@@ -50,3 +50,17 @@ class Player: Creature {
         }
     }
 }
+
+class Monster: Creature {
+    var name: String
+    var attack: Int
+    var protection: Int?
+    var health: Int
+
+    init() {
+        self.attack = RandomGeterator.getParam()
+        self.protection = RandomGeterator.getParam()
+        self.health = maxHealth
+        self.name = "Monster"
+    }
+}
