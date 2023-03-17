@@ -105,8 +105,6 @@ class Game {
 
     func getInfo() {
         print("""
-            ***
-
             Attacker Info:
             name: \(self.attacker.name)
             protection: \(self.attacker.protection ?? 0)
@@ -118,6 +116,7 @@ class Game {
             protection: \(self.defender.protection ?? 0)
             attack: \(self.defender.attack)
             health: \(self.defender.health)
+            ***
             """
         )
     }
@@ -125,12 +124,48 @@ class Game {
     func getAttack() {
         if getSuccess() {
             let damage = RandomGeterator.getDamage()
-            print("Damage dealt: \(damage)")
+            print("""
+
+            ***
+            !Damage dealt: \(damage)
+            ---
+            """
+            )
             self.defender.health -= damage
             self.getInfo()
         } else {
-            print("Attack is missed")
+            print("""
+
+            ***
+            Attack is missed :(
+            ---
+            """
+            )
             self.getInfo()
+        }
+    }
+}
+
+class Fight {
+    static let player = Player(name: "Olga Gurtueva")
+    static let monster = Monster()
+    static let game = Game(attacker: player, defender: monster)
+
+    static func doFight() {
+        var flag: Bool = false
+        while player.health > 0 {
+            if monster.health < 1 {
+                flag = true
+                break
+            } else {
+                game.getAttack()
+                game.swapAttacker()
+            }
+        }
+        if flag {
+            print("\(player.name) win! ✓ ")
+        } else {
+            print("\(monster.name) win!")
         }
     }
 }
