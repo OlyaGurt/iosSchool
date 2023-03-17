@@ -14,6 +14,12 @@ case medium = 0.25
 case high = 0.5
 }
 
+class RandomGeterator {
+    static func getRandom () -> Int {
+        return Int.random(in: 1...20)
+    }
+}
+
 class Player: Creature {
     private var counterOfHeal = 3
     var attack: Int
