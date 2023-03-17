@@ -102,4 +102,23 @@ class Game {
         }
         return false
     }
+
+    func getInfo() {
+        print("""
+            ***
+            
+            Attacker Info:
+            name: \(self.attacker.name)
+            protection: \(self.attacker.protection ?? 0)
+            attack: \(self.attacker.attack)
+            health: \(self.attacker.health)
+
+            Defender Info:
+            name: \(self.defender.name)
+            protection: \(self.defender.protection ?? 0)
+            attack: \(self.defender.attack)
+            health: \(self.defender.health)
+            """
+        )
+    }
 }
