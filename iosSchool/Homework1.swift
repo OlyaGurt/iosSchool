@@ -23,6 +23,10 @@ class RandomGeterator {
     static func getDamage() -> Int {
         return Int.random(in: 20..<maxHealth)
     }
+
+    static func getDice() -> Int {
+        return Int.random(in: 1..<7)
+    }
 }
 
 class Player: Creature {
@@ -77,6 +81,12 @@ class Game {
         self.defender = defender
     }
 
+    func swapAttacker() {
+        let attacker = self.attacker
+        self.attacker = self.defender
+        self.defender = attacker
+    }
+
     private func getModificator() -> Int {
         if ((self.attacker.attack - (self.defender.protection ?? 0)) + 1) < 1 {
             return 1
@@ -85,9 +95,11 @@ class Game {
         }
     }
 
-    func swapAttacker() {
-        let attacker = self.attacker
-        self.attacker = self.defender
-        self.defender = attacker
+    func getSuccess() -> Bool {
+        let modificator = self.getModificator()
+        for _ in 1...modificator where RandomGeterator.getDice() >= 5 {
+            return true
+        }
+        return false
     }
 }
