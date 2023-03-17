@@ -3,6 +3,7 @@ import Foundation
 let maxHealth = 100
 
 protocol Creature {
+    var name: String {get set }
     var attack: Int { get set }
     var protection: Int? { get set }
     var health: Int { get set }
@@ -64,5 +65,29 @@ class Monster: Creature {
         self.protection = RandomGeterator.getParam()
         self.health = maxHealth
         self.name = "Monster"
+    }
+}
+
+class Game {
+    var attacker: Creature
+    var defender: Creature
+
+    init(attacker: Creature, defender: Creature) {
+        self.attacker = attacker
+        self.defender = defender
+    }
+
+    private func getModificator() -> Int {
+        if ((self.attacker.attack - (self.defender.protection ?? 0)) + 1) < 1 {
+            return 1
+        } else {
+            return (self.attacker.attack - (self.defender.protection ?? 0)) + 1
+        }
+    }
+
+    func swapAttacker() {
+        let attacker = self.attacker
+        self.attacker = self.defender
+        self.defender = attacker
     }
 }
