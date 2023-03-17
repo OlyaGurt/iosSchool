@@ -58,7 +58,7 @@ class Player: Creature {
     }
 }
 
-class Monster: Creature {
+struct Monster: Creature {
     var name: String
     var attack: Int
     var protection: Int?
