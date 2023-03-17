@@ -8,10 +8,10 @@ protocol Creature {
     var health: Int { get set }
 }
 
-enum PlayerLevel: Double {
-case low = 0.1
-case medium = 0.25
-case high = 0.5
+enum PlayerLevel: Int {
+    case low = 10
+    case medium = 25
+    case high = 50
 }
 
 class RandomGeterator {
@@ -25,10 +25,24 @@ class Player: Creature {
     var attack: Int
     var protection: Int?
     var health: Int
+    var level: PlayerLevel
 
     init() {
         self.attack = RandomGeterator.getRandom()
         self.protection = RandomGeterator.getRandom()
         self.health = maxHealth
+        self.level = .high
+    }
+
+    func heal() {
+        if self.counterOfHeal > 0 {
+            self.health += self.level.rawValue
+            if self.health > 100 {
+                self.health = 100
+            }
+            self.counterOfHeal -= 1
+        } else {
+            print("Heal spell is empty!")
+        }
     }
 }
