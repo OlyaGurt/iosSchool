@@ -197,13 +197,19 @@ class Game {
 
 class Fight {
     static func doFight() {
-        let player = Player(name: "Olga Gurtueva", attack: 20, protection: 20,
-                                    health: 1000, level: PlayerLevel.medium)
-        let monster = Monster(attack: 10, protection: 10, health: 100)
-        guard let player else {
-            return
-        }
-        guard let monster else {
+        let player = Player(
+            name: "Olga Gurtueva",
+            attack: 20,
+            protection: 20,
+            health: 1000,
+            level: PlayerLevel.medium
+        )
+        let monster = Monster(
+            attack: 10,
+            protection: 10,
+            health: 100
+        )
+        guard let player, let monster else {
             return
         }
         let game = Game(attacker: player, defender: monster)
