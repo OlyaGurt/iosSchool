@@ -9,6 +9,19 @@ protocol Creature {
     var health: Int { get set }
 }
 
+protocol GameProtocol {
+    var attacker: Creature { get set }
+    var defender: Creature { get set }
+
+    init(attacker: Creature, defender: Creature)
+
+    func swapAttacker()
+    func getModificator() -> Int
+    func getSuccess() -> Bool
+    func getInfo()
+    func getAttack()
+}
+
 enum PlayerLevel: Int {
     case low = 10
     case medium = 25
