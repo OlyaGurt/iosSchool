@@ -196,15 +196,20 @@ class Game {
 }
 
 class Fight {
-    static let player = Player(name: "Olga Gurtueva", attack: 20, protection: 20,
-                                health: 100, level: PlayerLevel.medium)
-    static let monster = Monster(attack: 10, protection: 10, health: 100)
-    static let game = Game(attacker: player!, defender: monster!)
-
     static func doFight() {
+        let player = Player(name: "Olga Gurtueva", attack: 20, protection: 20,
+                                    health: 1000, level: PlayerLevel.medium)
+        let monster = Monster(attack: 10, protection: 10, health: 100)
+        guard let player else {
+            return
+        }
+        guard let monster else {
+            return
+        }
+        let game = Game(attacker: player, defender: monster)
         var flag: Bool = false
-        while player!.health > 0 {
-            if monster!.health < 1 {
+        while player.health > 0 {
+            if monster.health < 1 {
                 flag = true
                 break
             } else {
@@ -213,9 +218,9 @@ class Fight {
             }
         }
         if flag {
-            print("\(player!.name) win! ✓ ")
+            print("\(player.name) win! ✓ ")
         } else {
-            print("\(monster!.name) win!")
+            print("\(monster.name) win!")
         }
     }
 }
