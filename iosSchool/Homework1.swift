@@ -3,7 +3,7 @@ import Foundation
 let maxHealth = 100
 
 protocol Creature {
-    var name: String {get set }
+    var name: String { get set }
     var attack: Int { get set }
     var protection: Int? { get set }
     var health: Int { get set }
@@ -17,15 +17,15 @@ enum PlayerLevel: Int {
 
 class RandomGeterator {
     static func getParam() -> Int {
-        return Int.random(in: 1...20)
+        Int.random(in: 1...20)
     }
 
     static func getDamage() -> Int {
-        return Int.random(in: 20..<maxHealth)
+        Int.random(in: 20..<maxHealth)
     }
 
     static func getDice() -> Int {
-        return Int.random(in: 1..<7)
+        Int.random(in: 1..<7)
     }
 }
 
@@ -45,21 +45,48 @@ class Player: Creature {
         self.name = name
     }
 
+    init?(name: String, attack: Int, protection: Int?, health: Int, level: PlayerLevel) {
+        guard attack <= 20 && attack >= 0 else {
+            print("Invalid value \"attack\" entered. Please enter a number between 1 and 20.")
+            return nil
+        }
+        self.attack = attack
+
+        guard protection ?? 0 <= 20 && protection ?? 0 >= 0 else {
+            print("Invalid value \"protection\" entered. Please enter a number between 1 and 20.")
+            return nil
+        }
+        self.protection = protection
+
+        guard health <= 100 && health >= 0 else {
+            print("Invalid value \"health\" entered. Please enter a number between 1 and 100.")
+            return nil
+        }
+        self.health = health
+
+        self.level = level
+        guard name.count <= 20 else {
+            print("Too long name")
+            return nil
+        }
+        self.name = name
+    }
+
     func heal() {
-        if self.counterOfHeal > 0 {
-            self.health += self.level.rawValue
-            if self.health > 100 {
-                self.health = 100
+        if counterOfHeal > 0 {
+            health += level.rawValue
+            if health > 100 {
+                health = 100
             }
-            self.counterOfHeal -= 1
+            counterOfHeal -= 1
         } else {
             print("Heal spell is empty!")
         }
     }
 }
 
-struct Monster: Creature {
-    var name: String
+class Monster: Creature {
+    var name: String = "Monster"
     var attack: Int
     var protection: Int?
     var health: Int
@@ -68,7 +95,26 @@ struct Monster: Creature {
         self.attack = RandomGeterator.getParam()
         self.protection = RandomGeterator.getParam()
         self.health = maxHealth
-        self.name = "Monster"
+    }
+
+    init?(attack: Int, protection: Int?, health: Int) {
+        guard attack <= 20 && attack >= 0 else {
+            print("Invalid value \"attack\" entered. Please enter a number between 1 and 20.")
+            return nil
+        }
+        self.attack = attack
+
+        guard protection ?? 0 <= 20 && protection ?? 0 >= 0 else {
+            print("Invalid value \"protection\" entered. Please enter a number between 1 and 20.")
+            return nil
+        }
+        self.protection = protection
+
+        guard health <= 100 && health >= 0 else {
+            print("Invalid value \"health\" entered. Please enter a number between 1 and 100.")
+            return nil
+        }
+        self.health = health
     }
 }
 
@@ -88,15 +134,15 @@ class Game {
     }
 
     private func getModificator() -> Int {
-        if ((self.attacker.attack - (self.defender.protection ?? 0)) + 1) < 1 {
+        if ((attacker.attack - (defender.protection ?? 0)) + 1) < 1 {
             return 1
         } else {
-            return (self.attacker.attack - (self.defender.protection ?? 0)) + 1
+            return (attacker.attack - (defender.protection ?? 0)) + 1
         }
     }
 
     func getSuccess() -> Bool {
-        let modificator = self.getModificator()
+        let modificator = getModificator()
         for _ in 1...modificator where RandomGeterator.getDice() >= 5 {
             return true
         }
@@ -104,18 +150,19 @@ class Game {
     }
 
     func getInfo() {
-        print("""
+        print(
+            """
             Attacker Info:
-            name: \(self.attacker.name)
-            protection: \(self.attacker.protection ?? 0)
-            attack: \(self.attacker.attack)
-            health: \(self.attacker.health)
+            name: \(attacker.name)
+            protection: \(attacker.protection ?? 0)
+            attack: \(attacker.attack)
+            health: \(attacker.health)
 
             Defender Info:
-            name: \(self.defender.name)
-            protection: \(self.defender.protection ?? 0)
-            attack: \(self.defender.attack)
-            health: \(self.defender.health)
+            name: \(defender.name)
+            protection: \(defender.protection ?? 0)
+            attack: \(defender.attack)
+            health: \(defender.health)
             ***
             """
         )
@@ -124,34 +171,48 @@ class Game {
     func getAttack() {
         if getSuccess() {
             let damage = RandomGeterator.getDamage()
-            print("""
+            print(
+            """
 
             ***
             !Damage dealt: \(damage)
             ---
             """
             )
-            self.defender.health -= damage
-            self.getInfo()
+            defender.health -= damage
+            getInfo()
         } else {
-            print("""
+            print(
+            """
 
             ***
             Attack is missed :(
             ---
             """
             )
-            self.getInfo()
+            getInfo()
         }
     }
 }
 
 class Fight {
-    static let player = Player(name: "Olga Gurtueva")
-    static let monster = Monster()
-    static let game = Game(attacker: player, defender: monster)
-
     static func doFight() {
+        let player = Player(
+            name: "Olga Gurtueva",
+            attack: 20,
+            protection: 20,
+            health: 1000,
+            level: PlayerLevel.medium
+        )
+        let monster = Monster(
+            attack: 10,
+            protection: 10,
+            health: 100
+        )
+        guard let player, let monster else {
+            return
+        }
+        let game = Game(attacker: player, defender: monster)
         var flag: Bool = false
         while player.health > 0 {
             if monster.health < 1 {
