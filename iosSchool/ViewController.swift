@@ -8,8 +8,7 @@ class ViewController: UIViewController {
         newGen.alpha = 0.5
         let color = Color(red: 1, green: 1, blue: 1, alpha: .bright)
         color.description()
-//        Fight.doFight()
-        let generator: ColorGeneratorProtocol
-        generator = ColorGenerator(alpha: 1)
+        let _: ColorGeneratorProtocol
+        _ = ColorGenerator(alpha: 1)
     }
 }

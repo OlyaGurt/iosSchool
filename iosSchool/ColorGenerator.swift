@@ -22,7 +22,6 @@ struct Color {
     let blue: Double
     var alpha: Brightnes
     func description() {
-//    print("R: \(red), G: \(green), B: \(blue), alpha: \(alpha.rawValue)")
     }
 }
 
