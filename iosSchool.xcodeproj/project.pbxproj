@@ -21,6 +21,12 @@
 		6C057E6829C89EAD00BBB0AF /* SplashDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C057E6729C89EAD00BBB0AF /* SplashDataProvider.swift */; };
 		6C057E6A29C89F1800BBB0AF /* SplashAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C057E6929C89F1800BBB0AF /* SplashAssembly.swift */; };
 		6C057E6C29C89FE700BBB0AF /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C057E6B29C89FE700BBB0AF /* SplashCoordinator.swift */; };
+		6C057E7129CC07F500BBB0AF /* RegViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C057E7029CC07F500BBB0AF /* RegViewController.swift */; };
+		6C057E7329CC08E400BBB0AF /* RegDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C057E7229CC08E400BBB0AF /* RegDataProvider.swift */; };
+		6C057E7529CCA71B00BBB0AF /* RegAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C057E7429CCA71B00BBB0AF /* RegAssembly.swift */; };
+		6C057E7729CCA7E000BBB0AF /* RegCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C057E7629CCA7E000BBB0AF /* RegCoordinator.swift */; };
+		6C057E7929CCAD1100BBB0AF /* RegView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C057E7829CCAD1100BBB0AF /* RegView.swift */; };
+		6C057E7B29CCAD6C00BBB0AF /* RegViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C057E7A29CCAD6C00BBB0AF /* RegViewData.swift */; };
 		6CCEEE6229BF4B9B00A0E661 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEEE6129BF4B9B00A0E661 /* AppDelegate.swift */; };
 		6CCEEE6429BF4B9B00A0E661 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEEE6329BF4B9B00A0E661 /* SceneDelegate.swift */; };
 		6CCEEE6629BF4B9B00A0E661 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEEE6529BF4B9B00A0E661 /* ViewController.swift */; };
@@ -44,6 +50,12 @@
 		6C057E6729C89EAD00BBB0AF /* SplashDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashDataProvider.swift; sourceTree = "<group>"; };
 		6C057E6929C89F1800BBB0AF /* SplashAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashAssembly.swift; sourceTree = "<group>"; };
 		6C057E6B29C89FE700BBB0AF /* SplashCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
+		6C057E7029CC07F500BBB0AF /* RegViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegViewController.swift; sourceTree = "<group>"; };
+		6C057E7229CC08E400BBB0AF /* RegDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegDataProvider.swift; sourceTree = "<group>"; };
+		6C057E7429CCA71B00BBB0AF /* RegAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegAssembly.swift; sourceTree = "<group>"; };
+		6C057E7629CCA7E000BBB0AF /* RegCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegCoordinator.swift; sourceTree = "<group>"; };
+		6C057E7829CCAD1100BBB0AF /* RegView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegView.swift; sourceTree = "<group>"; };
+		6C057E7A29CCAD6C00BBB0AF /* RegViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegViewData.swift; sourceTree = "<group>"; };
 		6CCEEE5E29BF4B9B00A0E661 /* iosSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CCEEE6129BF4B9B00A0E661 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CCEEE6329BF4B9B00A0E661 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +101,19 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
+		6C057E6F29CC075400BBB0AF /* Reg */ = {
+			isa = PBXGroup;
+			children = (
+				6C057E7029CC07F500BBB0AF /* RegViewController.swift */,
+				6C057E7229CC08E400BBB0AF /* RegDataProvider.swift */,
+				6C057E7429CCA71B00BBB0AF /* RegAssembly.swift */,
+				6C057E7629CCA7E000BBB0AF /* RegCoordinator.swift */,
+				6C057E7829CCAD1100BBB0AF /* RegView.swift */,
+				6C057E7A29CCAD6C00BBB0AF /* RegViewData.swift */,
+			);
+			path = Reg;
+			sourceTree = "<group>";
+		};
 		6CCEEE5529BF4B9B00A0E661 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +133,7 @@
 		6CCEEE6029BF4B9B00A0E661 /* iosSchool */ = {
 			isa = PBXGroup;
 			children = (
+				6C057E6F29CC075400BBB0AF /* Reg */,
 				6C057E6429C89E5100BBB0AF /* Splash */,
 				6C057E5629C8979900BBB0AF /* Auth */,
 				6CCEEE6129BF4B9B00A0E661 /* AppDelegate.swift */,
@@ -218,23 +244,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CCEEE6629BF4B9B00A0E661 /* ViewController.swift in Sources */,
+				6C057E7729CCA7E000BBB0AF /* RegCoordinator.swift in Sources */,
 				6C057E5D29C8991C00BBB0AF /* AuthAssembly.swift in Sources */,
 				6C057E4D29C4A7E100BBB0AF /* Homework1.swift in Sources */,
 				6C057E6C29C89FE700BBB0AF /* SplashCoordinator.swift in Sources */,
 				6C057E6829C89EAD00BBB0AF /* SplashDataProvider.swift in Sources */,
 				6C057E6129C89C4800BBB0AF /* AuthView.swift in Sources */,
+				6C057E7129CC07F500BBB0AF /* RegViewController.swift in Sources */,
 				6C057E6A29C89F1800BBB0AF /* SplashAssembly.swift in Sources */,
 				6C057E5B29C8983D00BBB0AF /* AuthViewController.swift in Sources */,
 				6C057E4B29C4A62D00BBB0AF /* Assembly.swift in Sources */,
+				6C057E7929CCAD1100BBB0AF /* RegView.swift in Sources */,
+				6C057E7529CCA71B00BBB0AF /* RegAssembly.swift in Sources */,
 				6CCEEE7629BF58AA00A0E661 /* ColorGenerator.swift in Sources */,
 				6C057E5529C8918600BBB0AF /* AppCoordinator.swift in Sources */,
 				6C057E6329C89CB400BBB0AF /* AuthViewData.swift in Sources */,
 				6C057E6629C89E6A00BBB0AF /* SplashViewController.swift in Sources */,
 				6C057E5329C8908C00BBB0AF /* BaseCoordinator.swift in Sources */,
+				6C057E7329CC08E400BBB0AF /* RegDataProvider.swift in Sources */,
 				6CCEEE6229BF4B9B00A0E661 /* AppDelegate.swift in Sources */,
 				6CCEEE6429BF4B9B00A0E661 /* SceneDelegate.swift in Sources */,
 				6C057E5F29C89A3000BBB0AF /* AuthCoordinator.swift in Sources */,
 				6C057E5929C897B700BBB0AF /* AuthDataProvider.swift in Sources */,
+				6C057E7B29CCAD6C00BBB0AF /* RegViewData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

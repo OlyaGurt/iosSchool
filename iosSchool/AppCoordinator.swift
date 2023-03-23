@@ -8,7 +8,7 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
 
     func start(window: UIWindow) {
         self.window = window
-        let coordinator = assembly.splashCoordinator()
+        let coordinator = assembly.regCoordinator()
         setRoot(viewController: coordinator.make())
     }
 
