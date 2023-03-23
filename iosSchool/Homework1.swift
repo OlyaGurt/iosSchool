@@ -13,7 +13,7 @@ protocol GameProtocol {
     var attacker: Creature { get set }
     var defender: Creature { get set }
 
-    init (attacker: Creature, defender: Creature)
+    init(attacker: Creature, defender: Creature)
 
     func swapAttacker()
     func getModificator() -> Int
