@@ -2,7 +2,7 @@ import Foundation
 
 protocol SplashAssembly {
     func splashCoordinator() -> SplashCoordinator
-    func splashVC() -> SlashViewController
+    func splashVC() -> SplashViewController
     func splashDataProvider() -> SplashDataProvider
 }
 
@@ -12,7 +12,7 @@ extension Assembly: SplashAssembly {
         SplashCoordinator(assembly: self, context: .init())
 
     }
-    func splashVC() -> SlashViewController {
+    func splashVC() -> SplashViewController {
         .init(dataProvider: splashDataProvider())
     }
 

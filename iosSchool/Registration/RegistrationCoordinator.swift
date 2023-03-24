@@ -1,12 +1,12 @@
 import Foundation
 import UIKit
 
-class SplashCoordinator: BaseCoordinator<SplashCoordinator.Context> {
+class RegistrationCoordinator: BaseCoordinator<RegistrationCoordinator.Context> {
     struct Context {
     }
 
     override func make() -> UIViewController {
-        let controller = assembly.splashVC()
+        let controller = assembly.registrationVC()
         return controller
     }
 }

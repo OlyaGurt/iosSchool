@@ -1,10 +1,9 @@
-import Foundation
 import UIKit
 
-class SplashViewController: UIViewController {
-    private let dataProvider: SplashDataProvider
+class RegistrationViewController: UIViewController {
+    private let dataProvider: RegistrationDataProdiver
 
-    init(dataProvider: SplashDataProvider) {
+    init(dataProvider: RegistrationDataProdiver) {
         self.dataProvider = dataProvider
         super.init(nibName: nil, bundle: nil)
     }
@@ -15,6 +14,6 @@ class SplashViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green
+        view.backgroundColor = .blue
     }
 }
