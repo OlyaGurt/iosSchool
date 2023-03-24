@@ -9,6 +9,19 @@ protocol Creature {
     var health: Int { get set }
 }
 
+protocol GameProtocol {
+    var attacker: Creature { get set }
+    var defender: Creature { get set }
+
+    init(attacker: Creature, defender: Creature)
+
+    func swapAttacker()
+    func getModificator() -> Int
+    func getSuccess() -> Bool
+    func getInfo()
+    func getAttack()
+}
+
 enum PlayerLevel: Int {
     case low = 10
     case medium = 25
@@ -118,11 +131,11 @@ class Monster: Creature {
     }
 }
 
-class Game {
+class Game: GameProtocol {
     var attacker: Creature
     var defender: Creature
 
-    init(attacker: Creature, defender: Creature) {
+    required init(attacker: Creature, defender: Creature) {
         self.attacker = attacker
         self.defender = defender
     }
@@ -133,7 +146,7 @@ class Game {
         self.defender = attacker
     }
 
-    private func getModificator() -> Int {
+    func getModificator() -> Int {
         if ((attacker.attack - (defender.protection ?? 0)) + 1) < 1 {
             return 1
         } else {
@@ -212,7 +225,7 @@ class Fight {
         guard let player, let monster else {
             return
         }
-        let game = Game(attacker: player, defender: monster)
+        let game: GameProtocol = Game(attacker: player, defender: monster)
         var flag: Bool = false
         while player.health > 0 {
             if monster.health < 1 {
