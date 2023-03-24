@@ -1,19 +1,19 @@
 import Foundation
 
 protocol SplashAssembly {
-    func splashCoordinator() -> SplashCoordinator
-    func splashVC() -> SplashViewController
+    func splashCoordinator(onSuccess: (() -> Void)?) -> SplashCoordinator
+    func splashVC(onSuccess: (() -> Void)?) -> SplashViewController
     func splashDataProvider() -> SplashDataProvider
 }
 
 extension Assembly: SplashAssembly {
 
-    func splashCoordinator() -> SplashCoordinator {
-        SplashCoordinator(assembly: self, context: .init())
+    func splashCoordinator(onSuccess: (() -> Void)?) -> SplashCoordinator {
+        SplashCoordinator(assembly: self, context: .init(onSuccess: onSuccess))
 
     }
-    func splashVC() -> SplashViewController {
-        .init(dataProvider: splashDataProvider())
+    func splashVC(onSuccess: (() -> Void)?) -> SplashViewController {
+        .init(dataProvider: splashDataProvider(), onSuccess: onSuccess)
     }
 
     func splashDataProvider() -> SplashDataProvider {

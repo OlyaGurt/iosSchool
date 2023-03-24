@@ -8,7 +8,14 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
 
     func start(window: UIWindow) {
         self.window = window
-        let coordinator = assembly.registrationCoordinator()
+        let coordinator = assembly.splashCoordinator { [weak self] in
+            self?.startAuth()
+        }
+        setRoot(viewController: coordinator.make())
+    }
+
+    private func startAuth() {
+        let coordinator = assembly.authCoordinator()
         setRoot(viewController: coordinator.make())
     }
 
