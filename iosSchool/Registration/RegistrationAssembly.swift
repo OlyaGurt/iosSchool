@@ -1,21 +1,21 @@
 import Foundation
 
 protocol RegistrationAssembly {
-    func regCoordinator() -> RegistrationCoordinator
-    func regVC() -> RegistrationViewController
-    func regDataProvider() -> RegistrationDataProdiver
+    func registrationCoordinator() -> RegistrationCoordinator
+    func registrationVC() -> RegistrationViewController
+    func registrationDataProvider() -> RegistrationDataProdiver
 }
 
 extension Assembly: RegistrationAssembly {
-    func regCoordinator() -> RegistrationCoordinator {
+    func registrationCoordinator() -> RegistrationCoordinator {
         RegistrationCoordinator(assembly: self, context: .init())
     }
 
-    func regVC() -> RegistrationViewController {
-        .init(dataProvider: regDataProvider())
+    func registrationVC() -> RegistrationViewController {
+        .init(dataProvider: registrationDataProvider())
     }
 
-    func regDataProvider() -> RegistrationDataProdiver {
+    func registrationDataProvider() -> RegistrationDataProdiver {
         RegistrationDataProviderImp()
     }
 }

@@ -4,5 +4,5 @@ import UIKit
 protocol RegistrationView: UIView {
 }
 
-class RegViewImp: UIView, AuthView {
+class RegistrationViewImp: UIView, AuthView {
 }
