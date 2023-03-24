@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-protocol RegView: UIView {
+protocol RegistrationView: UIView {
 }
 
 class RegViewImp: UIView, AuthView {

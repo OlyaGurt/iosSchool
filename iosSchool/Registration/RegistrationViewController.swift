@@ -1,9 +1,9 @@
 import UIKit
 
-class RegViewController: UIViewController {
-    private let dataProvider: RegDataProdiver
+class RegistrationViewController: UIViewController {
+    private let dataProvider: RegistrationDataProdiver
 
-    init(dataProvider: RegDataProdiver) {
+    init(dataProvider: RegistrationDataProdiver) {
         self.dataProvider = dataProvider
         super.init(nibName: nil, bundle: nil)
     }

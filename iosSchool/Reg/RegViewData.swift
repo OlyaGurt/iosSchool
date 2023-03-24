@@ -1,3 +1,0 @@
-import Foundation
-
-struct RegViewData {}

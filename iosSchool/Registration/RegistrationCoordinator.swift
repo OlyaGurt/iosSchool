@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class RegCoordinator: BaseCoordinator<RegCoordinator.Context> {
+class RegistrationCoordinator: BaseCoordinator<RegistrationCoordinator.Context> {
     struct Context {
     }
 
