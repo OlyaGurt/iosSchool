@@ -1,3 +1,9 @@
 import Foundation
 
-struct AuthViewData {}
+struct AuthViewData {
+    let loginTextFieldPlaceholder: String
+
+    init(){
+        loginTextFieldPlaceholder = "Авторизуйтесь"
+    }
+}

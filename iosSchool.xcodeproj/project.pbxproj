@@ -31,8 +31,11 @@
 		6CBE3C6B29D1C2FF00D656DF /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBE3C6A29D1C2FF00D656DF /* TokenResponse.swift */; };
 		6CBE3C6E29D1C56400D656DF /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBE3C6D29D1C56400D656DF /* ApiClient.swift */; };
 		6CBE3C7029D1C58700D656DF /* NetworkConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBE3C6F29D1C58700D656DF /* NetworkConstans.swift */; };
-		6CBE3C7229D1CC2B00D656DF /* AuthApuClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBE3C7129D1CC2B00D656DF /* AuthApuClient.swift */; };
+		6CBE3C7229D1CC2B00D656DF /* AuthApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBE3C7129D1CC2B00D656DF /* AuthApiClient.swift */; };
 		6CBE3C7429D1D3A300D656DF /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBE3C7329D1D3A300D656DF /* ApiError.swift */; };
+		6CBE3C7729D7079100D656DF /* AuthViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CBE3C7629D7079100D656DF /* AuthViewImp.xib */; };
+		6CBE3C7A29D718C300D656DF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBE3C7929D718C300D656DF /* BaseViewController.swift */; };
+		6CBE3C7C29D71EEF00D656DF /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBE3C7B29D71EEF00D656DF /* CustomButton.swift */; };
 		6CCEEE6229BF4B9B00A0E661 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEEE6129BF4B9B00A0E661 /* AppDelegate.swift */; };
 		6CCEEE6429BF4B9B00A0E661 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEEE6329BF4B9B00A0E661 /* SceneDelegate.swift */; };
 		6CCEEE6629BF4B9B00A0E661 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEEE6529BF4B9B00A0E661 /* ViewController.swift */; };
@@ -66,8 +69,11 @@
 		6CBE3C6A29D1C2FF00D656DF /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
 		6CBE3C6D29D1C56400D656DF /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		6CBE3C6F29D1C58700D656DF /* NetworkConstans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstans.swift; sourceTree = "<group>"; };
-		6CBE3C7129D1CC2B00D656DF /* AuthApuClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApuClient.swift; sourceTree = "<group>"; };
+		6CBE3C7129D1CC2B00D656DF /* AuthApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApiClient.swift; sourceTree = "<group>"; };
 		6CBE3C7329D1D3A300D656DF /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		6CBE3C7629D7079100D656DF /* AuthViewImp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthViewImp.xib; sourceTree = "<group>"; };
+		6CBE3C7929D718C300D656DF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		6CBE3C7B29D71EEF00D656DF /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		6CCEEE5E29BF4B9B00A0E661 /* iosSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CCEEE6129BF4B9B00A0E661 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CCEEE6329BF4B9B00A0E661 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +98,7 @@
 		6C057E5629C8979900BBB0AF /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				6CBE3C7529D7075A00D656DF /* Subviews */,
 				6C057E5829C897B700BBB0AF /* AuthDataProvider.swift */,
 				6C057E5A29C8983D00BBB0AF /* AuthViewController.swift */,
 				6C057E5C29C8991C00BBB0AF /* AuthAssembly.swift */,
@@ -149,10 +156,27 @@
 			children = (
 				6CBE3C6D29D1C56400D656DF /* ApiClient.swift */,
 				6CBE3C6F29D1C58700D656DF /* NetworkConstans.swift */,
-				6CBE3C7129D1CC2B00D656DF /* AuthApuClient.swift */,
+				6CBE3C7129D1CC2B00D656DF /* AuthApiClient.swift */,
 				6CBE3C7329D1D3A300D656DF /* ApiError.swift */,
 			);
 			path = ApiClient;
+			sourceTree = "<group>";
+		};
+		6CBE3C7529D7075A00D656DF /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				6CBE3C7629D7079100D656DF /* AuthViewImp.xib */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		6CBE3C7829D718A700D656DF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				6C057E5229C8908C00BBB0AF /* BaseCoordinator.swift */,
+				6CBE3C7929D718C300D656DF /* BaseViewController.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		6CCEEE5529BF4B9B00A0E661 = {
@@ -174,6 +198,7 @@
 		6CCEEE6029BF4B9B00A0E661 /* iosSchool */ = {
 			isa = PBXGroup;
 			children = (
+				6CBE3C7829D718A700D656DF /* Common */,
 				6CBE3C6629D1BEA000D656DF /* Responses */,
 				6C057E6F29CC075400BBB0AF /* Registration */,
 				6C057E6429C89E5100BBB0AF /* Splash */,
@@ -187,8 +212,8 @@
 				6CCEEE6F29BF4B9B00A0E661 /* Info.plist */,
 				6CCEEE7529BF58AA00A0E661 /* ColorGenerator.swift */,
 				6C057E4A29C4A62D00BBB0AF /* Assembly.swift */,
-				6C057E5229C8908C00BBB0AF /* BaseCoordinator.swift */,
 				6C057E5429C8918600BBB0AF /* AppCoordinator.swift */,
+				6CBE3C7B29D71EEF00D656DF /* CustomButton.swift */,
 			);
 			path = iosSchool;
 			sourceTree = "<group>";
@@ -254,6 +279,7 @@
 			files = (
 				6CCEEE6E29BF4B9B00A0E661 /* LaunchScreen.storyboard in Resources */,
 				6CCEEE6B29BF4B9B00A0E661 /* Assets.xcassets in Resources */,
+				6CBE3C7729D7079100D656DF /* AuthViewImp.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +315,8 @@
 				6C057E7729CCA7E000BBB0AF /* RegistrationCoordinator.swift in Sources */,
 				6C057E5D29C8991C00BBB0AF /* AuthAssembly.swift in Sources */,
 				6C057E4D29C4A7E100BBB0AF /* Homework1.swift in Sources */,
+				6CBE3C7C29D71EEF00D656DF /* CustomButton.swift in Sources */,
+				6CBE3C7A29D718C300D656DF /* BaseViewController.swift in Sources */,
 				6C057E6C29C89FE700BBB0AF /* SplashCoordinator.swift in Sources */,
 				6C057E6829C89EAD00BBB0AF /* SplashDataProvider.swift in Sources */,
 				6C057E6129C89C4800BBB0AF /* AuthView.swift in Sources */,
@@ -306,7 +334,7 @@
 				6C057E6329C89CB400BBB0AF /* AuthViewData.swift in Sources */,
 				6C057E6629C89E6A00BBB0AF /* SplashViewController.swift in Sources */,
 				6C057E5329C8908C00BBB0AF /* BaseCoordinator.swift in Sources */,
-				6CBE3C7229D1CC2B00D656DF /* AuthApuClient.swift in Sources */,
+				6CBE3C7229D1CC2B00D656DF /* AuthApiClient.swift in Sources */,
 				6C057E7329CC08E400BBB0AF /* RegDataProvider.swift in Sources */,
 				6CBE3C7429D1D3A300D656DF /* ApiError.swift in Sources */,
 				6CCEEE6229BF4B9B00A0E661 /* AppDelegate.swift in Sources */,
