@@ -9,7 +9,7 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
     func start(window: UIWindow) {
         self.window = window
         let coordinator = assembly.splashCoordinator { [weak self] in
-            self?.startLocation()
+            self?.startCharacter()
         }
         setRoot(viewController: coordinator.make())
     }
@@ -26,6 +26,11 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
 
     private func startLocation() {
         let coordinator = assembly.locationCoordinator()
+        setRoot(viewController: coordinator.make())
+    }
+
+    private func startCharacter() {
+        let coordinator = assembly.characterCoordinator()
         setRoot(viewController: coordinator.make())
     }
 
