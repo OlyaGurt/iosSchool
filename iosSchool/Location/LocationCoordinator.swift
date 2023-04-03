@@ -1,12 +1,12 @@
 import Foundation
 import UIKit
 
-class AuthCoordinator: BaseCoordinator<AuthCoordinator.Context> {
+class LocationCoordinator: BaseCoordinator<LocationCoordinator.Context> {
     struct Context {
     }
 
     override func make() -> UIViewController {
-        let controller = assembly.authVC()
+        let controller = assembly.locationVC()
         return controller
     }
 }

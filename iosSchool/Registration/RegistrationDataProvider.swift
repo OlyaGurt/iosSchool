@@ -5,7 +5,7 @@ protocol RegistrationDataProdiver {
         username: String,
         password: String,
         completion: @escaping (Result<TokenResponse, ApiError>) -> Void
-        )
+    )
 }
 
 class RegistrationDataProviderImp: RegistrationDataProdiver {
@@ -28,6 +28,5 @@ class RegistrationDataProviderImp: RegistrationDataProdiver {
                     completion(.failure(error))
                 }
             }
-    }
-
+        }
 }
