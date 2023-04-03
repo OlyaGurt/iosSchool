@@ -1,6 +1,6 @@
 import UIKit
 
-class RegistrationViewController: UIViewController {
+class RegistrationViewController<View: RegistrationView>: BaseViewController<View> {
     private let dataProvider: RegistrationDataProdiver
 
     init(dataProvider: RegistrationDataProdiver) {
@@ -14,6 +14,16 @@ class RegistrationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
+
+        dataProvider.registration(username: "olyagurt", password: "1111") { [weak self] result in
+            switch result {
+            case .success(let response):
+                print("success")
+                print(response)
+            case .failure(let failure):
+                print(failure.rawValue)
+                print("fail")
+            }
+        }
     }
 }

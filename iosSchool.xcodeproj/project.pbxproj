@@ -22,7 +22,7 @@
 		6C057E6A29C89F1800BBB0AF /* SplashAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C057E6929C89F1800BBB0AF /* SplashAssembly.swift */; };
 		6C057E6C29C89FE700BBB0AF /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C057E6B29C89FE700BBB0AF /* SplashCoordinator.swift */; };
 		6C057E7129CC07F500BBB0AF /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C057E7029CC07F500BBB0AF /* RegistrationViewController.swift */; };
-		6C057E7329CC08E400BBB0AF /* RegDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C057E7229CC08E400BBB0AF /* RegDataProvider.swift */; };
+		6C057E7329CC08E400BBB0AF /* RegistrationDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C057E7229CC08E400BBB0AF /* RegistrationDataProvider.swift */; };
 		6C057E7529CCA71B00BBB0AF /* RegistrationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C057E7429CCA71B00BBB0AF /* RegistrationAssembly.swift */; };
 		6C057E7729CCA7E000BBB0AF /* RegistrationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C057E7629CCA7E000BBB0AF /* RegistrationCoordinator.swift */; };
 		6C057E7929CCAD1100BBB0AF /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C057E7829CCAD1100BBB0AF /* RegistrationView.swift */; };
@@ -36,6 +36,7 @@
 		6CBE3C7729D7079100D656DF /* AuthViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CBE3C7629D7079100D656DF /* AuthViewImp.xib */; };
 		6CBE3C7A29D718C300D656DF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBE3C7929D718C300D656DF /* BaseViewController.swift */; };
 		6CBE3C7C29D71EEF00D656DF /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBE3C7B29D71EEF00D656DF /* CustomButton.swift */; };
+		6CBE3C7E29D9ADBD00D656DF /* RegistrationApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBE3C7D29D9ADBD00D656DF /* RegistrationApiClient.swift */; };
 		6CCEEE6229BF4B9B00A0E661 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEEE6129BF4B9B00A0E661 /* AppDelegate.swift */; };
 		6CCEEE6429BF4B9B00A0E661 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEEE6329BF4B9B00A0E661 /* SceneDelegate.swift */; };
 		6CCEEE6629BF4B9B00A0E661 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEEE6529BF4B9B00A0E661 /* ViewController.swift */; };
@@ -60,7 +61,7 @@
 		6C057E6929C89F1800BBB0AF /* SplashAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashAssembly.swift; sourceTree = "<group>"; };
 		6C057E6B29C89FE700BBB0AF /* SplashCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
 		6C057E7029CC07F500BBB0AF /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
-		6C057E7229CC08E400BBB0AF /* RegDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegDataProvider.swift; sourceTree = "<group>"; };
+		6C057E7229CC08E400BBB0AF /* RegistrationDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationDataProvider.swift; sourceTree = "<group>"; };
 		6C057E7429CCA71B00BBB0AF /* RegistrationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationAssembly.swift; sourceTree = "<group>"; };
 		6C057E7629CCA7E000BBB0AF /* RegistrationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationCoordinator.swift; sourceTree = "<group>"; };
 		6C057E7829CCAD1100BBB0AF /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
@@ -74,6 +75,7 @@
 		6CBE3C7629D7079100D656DF /* AuthViewImp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthViewImp.xib; sourceTree = "<group>"; };
 		6CBE3C7929D718C300D656DF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		6CBE3C7B29D71EEF00D656DF /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		6CBE3C7D29D9ADBD00D656DF /* RegistrationApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationApiClient.swift; sourceTree = "<group>"; };
 		6CCEEE5E29BF4B9B00A0E661 /* iosSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CCEEE6129BF4B9B00A0E661 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CCEEE6329BF4B9B00A0E661 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,7 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				6C057E7029CC07F500BBB0AF /* RegistrationViewController.swift */,
-				6C057E7229CC08E400BBB0AF /* RegDataProvider.swift */,
+				6C057E7229CC08E400BBB0AF /* RegistrationDataProvider.swift */,
 				6C057E7429CCA71B00BBB0AF /* RegistrationAssembly.swift */,
 				6C057E7629CCA7E000BBB0AF /* RegistrationCoordinator.swift */,
 				6C057E7829CCAD1100BBB0AF /* RegistrationView.swift */,
@@ -158,6 +160,7 @@
 				6CBE3C6F29D1C58700D656DF /* NetworkConstans.swift */,
 				6CBE3C7129D1CC2B00D656DF /* AuthApiClient.swift */,
 				6CBE3C7329D1D3A300D656DF /* ApiError.swift */,
+				6CBE3C7D29D9ADBD00D656DF /* RegistrationApiClient.swift */,
 			);
 			path = ApiClient;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				6C057E6A29C89F1800BBB0AF /* SplashAssembly.swift in Sources */,
 				6C057E5B29C8983D00BBB0AF /* AuthViewController.swift in Sources */,
 				6CBE3C6E29D1C56400D656DF /* ApiClient.swift in Sources */,
+				6CBE3C7E29D9ADBD00D656DF /* RegistrationApiClient.swift in Sources */,
 				6C057E4B29C4A62D00BBB0AF /* Assembly.swift in Sources */,
 				6C057E7929CCAD1100BBB0AF /* RegistrationView.swift in Sources */,
 				6C057E7529CCA71B00BBB0AF /* RegistrationAssembly.swift in Sources */,
@@ -335,7 +339,7 @@
 				6C057E6629C89E6A00BBB0AF /* SplashViewController.swift in Sources */,
 				6C057E5329C8908C00BBB0AF /* BaseCoordinator.swift in Sources */,
 				6CBE3C7229D1CC2B00D656DF /* AuthApiClient.swift in Sources */,
-				6C057E7329CC08E400BBB0AF /* RegDataProvider.swift in Sources */,
+				6C057E7329CC08E400BBB0AF /* RegistrationDataProvider.swift in Sources */,
 				6CBE3C7429D1D3A300D656DF /* ApiError.swift in Sources */,
 				6CCEEE6229BF4B9B00A0E661 /* AppDelegate.swift in Sources */,
 				6CCEEE6429BF4B9B00A0E661 /* SceneDelegate.swift in Sources */,

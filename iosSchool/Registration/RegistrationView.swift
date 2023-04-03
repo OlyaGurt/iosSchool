@@ -2,9 +2,10 @@ import Foundation
 import UIKit
 
 protocol RegistrationView: UIView {
+    func update(with data: RegistrationViewData)
 }
 
-class RegistrationViewImp: UIView, AuthView {
-    func update(with data: AuthViewData) {
+class RegistrationViewImp: UIView, RegistrationView {
+    func update(with data: RegistrationViewData) {
     }
 }

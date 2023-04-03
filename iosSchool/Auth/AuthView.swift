@@ -13,10 +13,8 @@ class AuthViewImp: UIView, AuthView {
     @IBOutlet private var loginButton: CustomButton!
     @IBOutlet private var registrationButton: CustomButton!
 
-
     func update(with data: AuthViewData) {
         helloLabel.text = data.loginTextFieldPlaceholder
-        
         helloView.layer.shadowColor = UIColor.black.cgColor
         helloView.layer.shadowOpacity = 0.25
         helloView.layer.shadowOffset = CGSize(width: 0, height: 8)

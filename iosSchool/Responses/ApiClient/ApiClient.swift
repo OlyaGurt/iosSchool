@@ -16,6 +16,7 @@ class ApiClient {
         request.httpMethod = method.rawValue
         if method != .get, let data, !data.isEmpty {
             request.httpBody = data
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         }
         let task = URLSession.shared.dataTask(with: request) { data, _, error in
             if error != nil {
