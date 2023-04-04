@@ -1,9 +1,7 @@
 import Foundation
 
 protocol CharacterDataProvider {
-    func character(
-        completion: @escaping (Result<Character, ApiError>) -> Void
-    )
+    func character(characterId: String, completion: @escaping (Result<Character, ApiError>) -> Void)
 }
 
 class CharacterDataProviderImp: CharacterDataProvider {
@@ -14,8 +12,8 @@ class CharacterDataProviderImp: CharacterDataProvider {
         self.apiClient = apiClient
     }
 
-    func character(completion: @escaping (Result<Character, ApiError>) -> Void) {
-        apiClient.character { result in
+    func character(characterId: String, completion: @escaping (Result<Character, ApiError>) -> Void) {
+        apiClient.character(characterId: characterId) { result in
             switch result {
             case .success(let data):
                 completion(.success(data))

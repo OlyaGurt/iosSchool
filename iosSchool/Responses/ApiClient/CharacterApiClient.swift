@@ -1,14 +1,12 @@
 import Foundation
 
 protocol CharacterApiClient {
-    func character(
-        onRequestCompleted: @escaping (Result<Character, ApiError>) -> Void
-    )
+    func character(characterId: String, onRequestCompleted: @escaping (Result<Character, ApiError>) -> Void)
 }
 
 extension ApiClient: CharacterApiClient {
-    func character(onRequestCompleted: @escaping (Result<Character, ApiError>) -> Void) {
-        let url = NetworkConstants.URLStrings.character + "/821"
+    func character(characterId: String, onRequestCompleted: @escaping (Result<Character, ApiError>) -> Void) {
+        let url = NetworkConstants.URLStrings.character + "/" + characterId
         performRequest(url: url, data: nil, method: .get, onRequestCompleted: onRequestCompleted)
     }
 }

@@ -4,10 +4,7 @@ protocol RegistrationApiClient {
     func registration(
         username: String,
         password: String,
-        onRequestCompleted: @escaping
-            (Result<TokenResponse, ApiError>) ->
-            Void
-    )
+        onRequestCompleted: @escaping (Result<TokenResponse, ApiError>) -> Void)
 }
 
 extension ApiClient: RegistrationApiClient {

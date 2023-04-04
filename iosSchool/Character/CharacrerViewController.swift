@@ -16,7 +16,7 @@ class CharacterViewController<View: CharacterView>: BaseViewController<View> {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        dataProvider.character { [weak self] result in
+        dataProvider.character(characterId: "821") { [weak self] result in
             switch result {
             case .success(let response):
                 print("success")

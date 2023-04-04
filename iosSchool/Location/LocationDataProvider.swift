@@ -1,9 +1,7 @@
 import Foundation
 
 protocol LocationDataProvider {
-    func location(
-        completion: @escaping (Result<LocationsList, ApiError>) -> Void
-    )
+    func location(completion: @escaping (Result<LocationsList, ApiError>) -> Void)
 }
 
 class LocationDataProviderImp: LocationDataProvider {
