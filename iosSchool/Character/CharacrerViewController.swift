@@ -1,9 +1,10 @@
 import UIKit
 
-class RegistrationViewController<View: RegistrationView>: BaseViewController<View> {
-    private let dataProvider: RegistrationDataProdiver
+class CharacterViewController<View: CharacterView>: BaseViewController<View> {
 
-    init(dataProvider: RegistrationDataProdiver) {
+    private let dataProvider: CharacterDataProvider
+
+    init(dataProvider: CharacterDataProvider) {
         self.dataProvider = dataProvider
         super.init(nibName: nil, bundle: nil)
     }
@@ -15,7 +16,7 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        dataProvider.registration(username: "olyagurt", password: "1111") { [weak self] result in
+        dataProvider.character(characterId: "821") { [weak self] result in
             switch result {
             case .success(let response):
                 print("success")

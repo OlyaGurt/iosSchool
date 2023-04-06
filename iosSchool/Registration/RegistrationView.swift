@@ -2,11 +2,11 @@ import Foundation
 import UIKit
 
 protocol RegistrationView: UIView {
+    func update(with data: RegistrationViewData)
 }
 
-class RegistrationViewImp: UIView, AuthView {
+class RegistrationViewImp: UIView, RegistrationView {
     var registrationAction: (() -> Void)?
-
-    func update(with data: AuthViewData) {
+    func update(with data: RegistrationViewData) {
     }
 }

@@ -18,7 +18,6 @@ class AuthViewController<View: AuthView>: BaseViewController<View> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        view.backgroundColor = .red
 
         rootView.update(with: AuthViewData())
         rootView.registrationAction = onOpenRegistration
