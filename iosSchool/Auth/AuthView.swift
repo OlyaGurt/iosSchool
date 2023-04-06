@@ -2,10 +2,14 @@ import Foundation
 import UIKit
 
 protocol AuthView: UIView {
+    var registrationAction: (() -> Void)? { get set }
+
     func update(with data: AuthViewData)
 }
 
 class AuthViewImp: UIView, AuthView {
+    var registrationAction: (() -> Void)?
+
     @IBOutlet private weak var helloView: UIView!
     @IBOutlet private weak var helloLabel: UILabel!
     @IBOutlet private var loginTextField: UITextField!
@@ -30,6 +34,16 @@ class AuthViewImp: UIView, AuthView {
 
         makeButton(button: loginButton)
         makeButton(button: registrationButton)
+    }
+
+    // MARK: - Actions
+
+    @IBAction func loginButtonDidTap(sender: UIButton) {
+        
+    }
+
+    @IBAction func registrationButtonDidTap(sender: UIButton) {
+        registrationAction?()
     }
 
     // MARK: - Private methods

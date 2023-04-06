@@ -2,10 +2,13 @@ import UIKit
 
 class AuthViewController<View: AuthView>: BaseViewController<View> {
 
+    var onOpenRegistration: (() -> Void)?
+
     private let dataProvider: AuthDataProvider
 
     init(dataProvider: AuthDataProvider) {
         self.dataProvider = dataProvider
+
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -17,7 +20,7 @@ class AuthViewController<View: AuthView>: BaseViewController<View> {
         super.viewDidLoad()
 
         rootView.update(with: AuthViewData())
-
+        rootView.registrationAction = onOpenRegistration
         dataProvider.authorization(username: "olya_gurt", password: "1111") { [weak self] result in
             switch result {
             case .success(let success):

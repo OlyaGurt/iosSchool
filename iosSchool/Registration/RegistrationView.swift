@@ -6,6 +6,7 @@ protocol RegistrationView: UIView {
 }
 
 class RegistrationViewImp: UIView, RegistrationView {
+    var registrationAction: (() -> Void)?
     func update(with data: RegistrationViewData) {
     }
 }
