@@ -39,7 +39,6 @@ class AuthViewImp: UIView, AuthView {
     // MARK: - Actions
 
     @IBAction func loginButtonDidTap(sender: UIButton) {
-        
     }
 
     @IBAction func registrationButtonDidTap(sender: UIButton) {

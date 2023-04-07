@@ -14,7 +14,7 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        rootView.update(with: RegistrationViewData())
         dataProvider.registration(username: "olyagurt", password: "1111") { [weak self] result in
             switch result {
             case .success(let response):

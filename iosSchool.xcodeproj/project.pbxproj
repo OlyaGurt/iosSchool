@@ -27,6 +27,7 @@
 		6C057E7729CCA7E000BBB0AF /* RegistrationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C057E7629CCA7E000BBB0AF /* RegistrationCoordinator.swift */; };
 		6C057E7929CCAD1100BBB0AF /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C057E7829CCAD1100BBB0AF /* RegistrationView.swift */; };
 		6C057E7B29CCAD6C00BBB0AF /* RegistrationViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C057E7A29CCAD6C00BBB0AF /* RegistrationViewData.swift */; };
+		6C505A0529DFD22000C42414 /* RegistrationViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C505A0429DFD22000C42414 /* RegistrationViewImp.xib */; };
 		6CBE3C6929D1BFBF00D656DF /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBE3C6829D1BFBF00D656DF /* Location.swift */; };
 		6CBE3C6B29D1C2FF00D656DF /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBE3C6A29D1C2FF00D656DF /* TokenResponse.swift */; };
 		6CBE3C6E29D1C56400D656DF /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBE3C6D29D1C56400D656DF /* ApiClient.swift */; };
@@ -82,6 +83,7 @@
 		6C057E7629CCA7E000BBB0AF /* RegistrationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationCoordinator.swift; sourceTree = "<group>"; };
 		6C057E7829CCAD1100BBB0AF /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		6C057E7A29CCAD6C00BBB0AF /* RegistrationViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewData.swift; sourceTree = "<group>"; };
+		6C505A0429DFD22000C42414 /* RegistrationViewImp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewImp.xib; sourceTree = "<group>"; };
 		6CBE3C6829D1BFBF00D656DF /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		6CBE3C6A29D1C2FF00D656DF /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
 		6CBE3C6D29D1C56400D656DF /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 		6C057E6F29CC075400BBB0AF /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				6C5059FF29DFCFF000C42414 /* Subviews */,
 				6C057E7029CC07F500BBB0AF /* RegistrationViewController.swift */,
 				6C057E7229CC08E400BBB0AF /* RegistrationDataProvider.swift */,
 				6C057E7429CCA71B00BBB0AF /* RegistrationAssembly.swift */,
@@ -165,6 +168,14 @@
 				6C057E7A29CCAD6C00BBB0AF /* RegistrationViewData.swift */,
 			);
 			path = Registration;
+			sourceTree = "<group>";
+		};
+		6C5059FF29DFCFF000C42414 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				6C505A0429DFD22000C42414 /* RegistrationViewImp.xib */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		6CBE3C6629D1BEA000D656DF /* Responses */ = {
@@ -344,6 +355,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C505A0529DFD22000C42414 /* RegistrationViewImp.xib in Resources */,
 				6CCEEE6E29BF4B9B00A0E661 /* LaunchScreen.storyboard in Resources */,
 				6CCEEE6B29BF4B9B00A0E661 /* Assets.xcassets in Resources */,
 				6CBE3C7729D7079100D656DF /* AuthViewImp.xib in Resources */,
