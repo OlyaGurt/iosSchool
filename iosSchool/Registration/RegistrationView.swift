@@ -11,6 +11,7 @@ class RegistrationViewImp: UIView, RegistrationView {
     var backAction: (() -> Void)?
     var registrationAction: (() -> Void)?
 
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet private weak var registrationLabel: UILabel!
     @IBOutlet private weak var loginView: UIStackView!
     @IBOutlet private weak var enterLoginTextField: UITextField!
@@ -20,6 +21,7 @@ class RegistrationViewImp: UIView, RegistrationView {
     @IBOutlet private weak var backButton: CustomButton!
 
     func update(with data: RegistrationViewData) {
+        imageView.contentMode = .scaleToFill
         registrationLabel.text = data.registrationTextFieldPlaceholder
 
         enterLoginTextField.text = data.enterLoginTextFielsPlaceholder

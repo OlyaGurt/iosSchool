@@ -28,7 +28,7 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Регистрация" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bT-1n-Eel">
-                            <rect key="frame" x="173.66666666666663" y="218" width="128.33333333333337" height="26.333333333333343"/>
+                            <rect key="frame" x="160" y="218" width="142" height="26.333333333333343"/>
                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -99,9 +99,10 @@
                     <color key="backgroundColor" name="Lilac50"/>
                     <constraints>
                         <constraint firstItem="qtU-is-NRe" firstAttribute="top" secondItem="TVD-6Z-rIo" secondAttribute="bottom" priority="250" constant="150" id="5zr-CM-e1m"/>
-                        <constraint firstItem="qtU-is-NRe" firstAttribute="top" relation="greaterThanOrEqual" secondItem="zeq-yj-ehV" secondAttribute="bottom" constant="250" id="6jH-I4-gT0"/>
+                        <constraint firstItem="TVD-6Z-rIo" firstAttribute="top" relation="greaterThanOrEqual" secondItem="zeq-yj-ehV" secondAttribute="bottom" constant="15" id="6jH-I4-gT0"/>
                         <constraint firstAttribute="bottom" secondItem="qtU-is-NRe" secondAttribute="bottom" constant="46" id="HOK-WZ-cv3"/>
                         <constraint firstItem="TVD-6Z-rIo" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2bT-1n-Eel" secondAttribute="bottom" constant="30" id="S3O-bN-TvZ"/>
+                        <constraint firstItem="2bT-1n-Eel" firstAttribute="leading" relation="lessThanOrEqual" secondItem="zeq-yj-ehV" secondAttribute="trailing" constant="20" id="VqN-DT-5Yc"/>
                         <constraint firstItem="qtU-is-NRe" firstAttribute="leading" secondItem="H4a-y8-SP4" secondAttribute="leading" id="WeI-TA-ay8"/>
                         <constraint firstItem="2bT-1n-Eel" firstAttribute="top" secondItem="H4a-y8-SP4" secondAttribute="top" constant="218" id="jaT-bA-m10"/>
                         <constraint firstAttribute="trailing" secondItem="TVD-6Z-rIo" secondAttribute="trailing" constant="58" id="jtf-Tc-VfN"/>
@@ -131,6 +132,7 @@
                 <outlet property="doneButton" destination="hDZ-jh-xD7" id="2dY-9v-wmN"/>
                 <outlet property="enterLoginTextField" destination="fYX-ay-U5H" id="caF-D0-CEJ"/>
                 <outlet property="enterPasswordTextField" destination="9J7-Te-6D9" id="mvB-SY-Hb6"/>
+                <outlet property="imageView" destination="iHD-zV-JHW" id="sZ0-KF-Iky"/>
                 <outlet property="loginView" destination="TVD-6Z-rIo" id="luo-cR-T8s"/>
                 <outlet property="registrationLabel" destination="2bT-1n-Eel" id="FHy-RC-rmq"/>
                 <outlet property="repeatPasswordTextField" destination="2X5-hE-5l1" id="bZB-wd-6qr"/>
