@@ -2,13 +2,12 @@ import UIKit
 
 class RegistrationViewController<View: RegistrationView>: BaseViewController<View> {
 
-    var onOpenAuth: (() -> Void)?
+    var closeRegistration: (() -> Void)?
 
     private let dataProvider: RegistrationDataProdiver
 
     init(dataProvider: RegistrationDataProdiver) {
         self.dataProvider = dataProvider
-        
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -19,7 +18,7 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
     override func viewDidLoad() {
         super.viewDidLoad()
         rootView.update(with: RegistrationViewData())
-        rootView.backAction = onOpenAuth
+        rootView.backAction = closeRegistration
         dataProvider.registration(username: "olyagurt", password: "1111") { [weak self] result in
             switch result {
             case .success(let response):
