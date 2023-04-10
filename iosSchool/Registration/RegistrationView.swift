@@ -24,19 +24,19 @@ class RegistrationViewImp: UIView, RegistrationView {
         imageView.contentMode = .scaleToFill
         registrationLabel.text = data.registrationTextFieldPlaceholder
 
-        enterLoginTextField.text = data.enterLoginTextFielsPlaceholder
+        enterLoginTextField.placeholder = data.enterLoginTextFielsPlaceholder
         enterLoginTextField.textColor = .lightGray
         enterLoginTextField.backgroundColor = .white.withAlphaComponent(0.6)
         enterLoginTextField.layer.cornerRadius = 15
         enterLoginTextField.layer.masksToBounds = true
 
-        enterPasswordTextField.text = data.enterPasswordTextFielsPlaceholder
+        enterPasswordTextField.placeholder = data.enterPasswordTextFielsPlaceholder
         enterPasswordTextField.textColor = .lightGray
         enterPasswordTextField.backgroundColor = .white.withAlphaComponent(0.6)
         enterPasswordTextField.layer.cornerRadius = 15
         enterPasswordTextField.layer.masksToBounds = true
 
-        repeatPasswordTextField.text = data.repeatPasswordTextFielsPlaceholder
+        repeatPasswordTextField.placeholder = data.repeatPasswordTextFielsPlaceholder
         repeatPasswordTextField.textColor = .lightGray
         repeatPasswordTextField.backgroundColor = .white.withAlphaComponent(0.6)
         repeatPasswordTextField.layer.cornerRadius = 15
