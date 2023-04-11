@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 class Assembly {
 
@@ -12,5 +13,15 @@ class Assembly {
 
     func appCoordinator() -> AppCoordinator {
         AppCoordinator(assembly: self, context: CoordinatorContext())
+    }
+
+    func rootTabBarController() -> UITabBarController {
+        TabBarController()
+    }
+
+    func rootNabigationController() -> UINavigationController {
+        let controller = BaseNavigationController()
+        controller.modalPresentationStyle = .fullScreen
+        return controller
     }
 }
