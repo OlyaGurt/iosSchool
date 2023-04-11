@@ -11,7 +11,7 @@ class RegistrationViewImp: UIView, RegistrationView {
     var backAction: (() -> Void)?
     var registrationAction: (() -> Void)?
 
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var registrationLabel: UILabel!
     @IBOutlet private weak var loginView: UIStackView!
     @IBOutlet private weak var enterLoginTextField: UITextField!
