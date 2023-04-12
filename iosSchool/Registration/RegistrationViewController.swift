@@ -1,6 +1,9 @@
 import UIKit
 
 class RegistrationViewController<View: RegistrationView>: BaseViewController<View> {
+
+    var closeRegistration: (() -> Void)?
+
     private let dataProvider: RegistrationDataProdiver
 
     init(dataProvider: RegistrationDataProdiver) {
@@ -14,7 +17,8 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        rootView.update(with: RegistrationViewData())
+        rootView.backAction = closeRegistration
         dataProvider.registration(username: "olyagurt", password: "1111") { [weak self] result in
             switch result {
             case .success(let response):
