@@ -3,13 +3,21 @@ import UIKit
 
 protocol AuthView: UIView {
     var registrationAction: (() -> Void)? { get set }
+    var delegate: AuthViewDelegate? { get set }
 
     func update(with data: AuthViewData)
+}
+
+protocol AuthViewDelegate: AnyObject {
+    func loginButtonDidTap(login: String, password: String)
 }
 
 class AuthViewImp: UIView, AuthView {
     var registrationAction: (() -> Void)?
 
+    weak var delegate: AuthViewDelegate?
+
+    @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var helloView: UIView!
     @IBOutlet private weak var helloLabel: UILabel!
     @IBOutlet private var loginTextField: UITextField!
@@ -17,7 +25,16 @@ class AuthViewImp: UIView, AuthView {
     @IBOutlet private var loginButton: CustomButton!
     @IBOutlet private var registrationButton: CustomButton!
 
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
     func update(with data: AuthViewData) {
+
+        let recognize = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
+        addGestureRecognizer(recognize)
+        scrollView.keyboardDismissMode = .onDrag
+
         helloLabel.text = data.loginTextFieldPlaceholder
         helloView.layer.shadowColor = UIColor.black.cgColor
         helloView.layer.shadowOpacity = 0.25
@@ -27,22 +44,67 @@ class AuthViewImp: UIView, AuthView {
         loginTextField.backgroundColor = .white.withAlphaComponent(0.6)
         loginTextField.layer.cornerRadius = 15
         loginTextField.layer.masksToBounds = true
+        loginTextField.delegate = self
 
         passwordTextField.backgroundColor = .white.withAlphaComponent(0.6)
         passwordTextField.layer.cornerRadius = 15
         passwordTextField.layer.masksToBounds = true
+        passwordTextField.delegate = self
 
         makeButton(button: loginButton)
         makeButton(button: registrationButton)
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
     }
 
     // MARK: - Actions
 
     @IBAction func loginButtonDidTap(sender: UIButton) {
+        loginTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        delegate?.loginButtonDidTap(
+            login: loginTextField.text ?? "",
+            password: passwordTextField.text ?? ""
+        )
+    }
+
+    @objc
+    private func closeKeyboard() {
+        endEditing(true)
     }
 
     @IBAction func registrationButtonDidTap(sender: UIButton) {
         registrationAction?()
+    }
+
+    @objc
+    private func keyboardWillShow(notification: Notification) {
+        guard let userInfo = notification.userInfo else {
+            return
+        }
+        guard let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {
+            return
+        }
+
+        let keyboardHeight = keyboardFrame.cgRectValue.height
+        scrollView.contentInset.bottom = keyboardHeight + 15
+        scrollView.verticalScrollIndicatorInsets.bottom = keyboardHeight
+    }
+
+    @objc
+    private func keyboardWillHide(notification: Notification) {
+        scrollView.contentInset = .zero
     }
 
     // MARK: - Private methods
@@ -57,5 +119,18 @@ class AuthViewImp: UIView, AuthView {
         button.layer.shadowOpacity = 0.25
         button.layer.shadowOffset = CGSize(width: 0, height: 4)
         button.layer.shadowRadius = 4
+    }
+}
+
+// MARK: - UITextFieldDelegate
+
+extension AuthViewImp: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == loginTextField {
+            passwordTextField.becomeFirstResponder()
+        } else {
+            passwordTextField.resignFirstResponder()
+        }
+        return true
     }
 }

@@ -16,6 +16,7 @@ class LocationViewController<View: LocationView>: BaseViewController<View> {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupBar()
         dataProvider.location { [weak self] result in
             switch result {
             case .success(let response):
@@ -27,4 +28,31 @@ class LocationViewController<View: LocationView>: BaseViewController<View> {
             }
         }
     }
+
+// MARK: - Actions
+
+    @objc
+    private func reload() {
+    }
+
+// MARK: - Private
+
+    private func setupBar() {
+            title = "Выбор планеты"
+            navigationController?.navigationBar.titleTextAttributes = [
+                .foregroundColor: UIColor(named: "DarkBlue") ?? .black,
+                .font: UIFont.systemFont(ofSize: 18)
+            ]
+//            navigationItem.rightBarButtonItem = UIBarButtonItem(
+//                barButtonSystemItem: .refresh,
+//                target: self,
+//                action: #selector(reload)
+//            )
+            navigationItem.rightBarButtonItem = UIBarButtonItem(
+                image: UIImage(named: "reload"),
+                style: .done,
+                target: self,
+                action: #selector(reload)
+            )
+        }
 }
