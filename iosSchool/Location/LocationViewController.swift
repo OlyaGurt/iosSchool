@@ -2,6 +2,7 @@ import UIKit
 
 class LocationViewController<View: LocationView>: BaseViewController<View> {
 
+    var selectLocation: ((LocationCellData) -> Void)?
     private let dataProvider: LocationDataProvider
 
     init(dataProvider: LocationDataProvider) {
@@ -17,11 +18,13 @@ class LocationViewController<View: LocationView>: BaseViewController<View> {
         super.viewDidLoad()
 
         setupBar()
+        rootView.makeView()
+        rootView.selectLocation = selectLocation
+
         dataProvider.location { [weak self] result in
             switch result {
-            case .success(let response):
-                print("success")
-                print(response)
+            case .success(let data):
+                self?.rootView.update(with: LocationViewData(locations: data))
             case .failure(let failure):
                 print(failure.rawValue)
                 print("fail")
