@@ -70,6 +70,9 @@
 		6CEC6EDD29E98AE40070CD1A /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CEC6EDB29E98AE40070CD1A /* LocationCell.xib */; };
 		6CEC6EDF29E98B1C0070CD1A /* LocationCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEC6EDE29E98B1C0070CD1A /* LocationCellData.swift */; };
 		6CEC6EE229E98E7A0070CD1A /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEC6EE129E98E7A0070CD1A /* NSObject+ClassName.swift */; };
+		6CEC6EE429EABD070070CD1A /* SplashViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CEC6EE329EABD070070CD1A /* SplashViewImp.xib */; };
+		6CEC6EE629EABECD0070CD1A /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEC6EE529EABECD0070CD1A /* SplashView.swift */; };
+		6CEC6EE829EABFAA0070CD1A /* SplashViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEC6EE729EABFAA0070CD1A /* SplashViewData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -138,6 +141,9 @@
 		6CEC6EDB29E98AE40070CD1A /* LocationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationCell.xib; sourceTree = "<group>"; };
 		6CEC6EDE29E98B1C0070CD1A /* LocationCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCellData.swift; sourceTree = "<group>"; };
 		6CEC6EE129E98E7A0070CD1A /* NSObject+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
+		6CEC6EE329EABD070070CD1A /* SplashViewImp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewImp.xib; sourceTree = "<group>"; };
+		6CEC6EE529EABECD0070CD1A /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		6CEC6EE729EABFAA0070CD1A /* SplashViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +178,9 @@
 				6C057E6729C89EAD00BBB0AF /* SplashDataProvider.swift */,
 				6C057E6929C89F1800BBB0AF /* SplashAssembly.swift */,
 				6C057E6B29C89FE700BBB0AF /* SplashCoordinator.swift */,
+				6CEC6EE329EABD070070CD1A /* SplashViewImp.xib */,
+				6CEC6EE529EABECD0070CD1A /* SplashView.swift */,
+				6CEC6EE729EABFAA0070CD1A /* SplashViewData.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -413,6 +422,7 @@
 				6C505A0529DFD22000C42414 /* RegistrationViewImp.xib in Resources */,
 				6CCEEE6E29BF4B9B00A0E661 /* LaunchScreen.storyboard in Resources */,
 				6CCEEE6B29BF4B9B00A0E661 /* Assets.xcassets in Resources */,
+				6CEC6EE429EABD070070CD1A /* SplashViewImp.xib in Resources */,
 				6CBE3C7729D7079100D656DF /* AuthViewImp.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,6 +470,7 @@
 				6CBE3C9329DAB62800D656DF /* LocationList.swift in Sources */,
 				6CEC6ED629E446420070CD1A /* CabinetAssembly.swift in Sources */,
 				6CEC6ED229E4461A0070CD1A /* CabinetViewController.swift in Sources */,
+				6CEC6EE629EABECD0070CD1A /* SplashView.swift in Sources */,
 				6CEC6ED829E449960070CD1A /* RootTab.swift in Sources */,
 				6CBE3C9E29DABAD400D656DF /* Character.swift in Sources */,
 				6C057E6C29C89FE700BBB0AF /* SplashCoordinator.swift in Sources */,
@@ -503,6 +514,7 @@
 				6C057E7B29CCAD6C00BBB0AF /* RegistrationViewData.swift in Sources */,
 				6CBE3C7029D1C58700D656DF /* NetworkConstans.swift in Sources */,
 				6CBE3C8529DA997000D656DF /* LocationDataProvider.swift in Sources */,
+				6CEC6EE829EABFAA0070CD1A /* SplashViewData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
