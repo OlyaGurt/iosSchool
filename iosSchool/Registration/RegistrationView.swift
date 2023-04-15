@@ -37,18 +37,21 @@ class RegistrationViewImp: UIView, RegistrationView {
         enterLoginTextField.backgroundColor = .white.withAlphaComponent(0.6)
         enterLoginTextField.layer.cornerRadius = 15
         enterLoginTextField.layer.masksToBounds = true
+        enterLoginTextField.delegate = self
 
         enterPasswordTextField.placeholder = data.enterPasswordTextFielsPlaceholder
         enterPasswordTextField.textColor = .lightGray
         enterPasswordTextField.backgroundColor = .white.withAlphaComponent(0.6)
         enterPasswordTextField.layer.cornerRadius = 15
         enterPasswordTextField.layer.masksToBounds = true
+        enterPasswordTextField.delegate = self
 
         repeatPasswordTextField.placeholder = data.repeatPasswordTextFielsPlaceholder
         repeatPasswordTextField.textColor = .lightGray
         repeatPasswordTextField.backgroundColor = .white.withAlphaComponent(0.6)
         repeatPasswordTextField.layer.cornerRadius = 15
         repeatPasswordTextField.layer.masksToBounds = true
+        repeatPasswordTextField.delegate = self
 
         makeButton(button: doneButton)
         makeButton(button: backButton)
@@ -112,5 +115,21 @@ class RegistrationViewImp: UIView, RegistrationView {
         button.layer.shadowOpacity = 0.25
         button.layer.shadowOffset = CGSize(width: 0, height: 4)
         button.layer.shadowRadius = 4
+    }
+}
+
+extension RegistrationViewImp: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case enterLoginTextField:
+            enterPasswordTextField.becomeFirstResponder()
+        case enterPasswordTextField:
+            repeatPasswordTextField.becomeFirstResponder()
+        case repeatPasswordTextField:
+            repeatPasswordTextField.resignFirstResponder()
+        default:
+            repeatPasswordTextField.resignFirstResponder()
+        }
+        return true
     }
 }
