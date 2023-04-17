@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class SplashViewController<View: SplashView>: BaseViewController<View> {
+class SplashViewController<View: UIView>: BaseViewController<View> {
     private let dataProvider: SplashDataProvider
 
     private let onSuccess: (() -> Void)?
@@ -18,7 +18,6 @@ class SplashViewController<View: SplashView>: BaseViewController<View> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        rootView.update(with: SplashViewData())
     }
 
     override func viewDidAppear(_ animated: Bool) {
