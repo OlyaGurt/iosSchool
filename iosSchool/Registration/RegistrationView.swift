@@ -2,14 +2,19 @@ import Foundation
 import UIKit
 
 protocol RegistrationView: UIView {
-    var backAction: (() -> Void)? { get set }
-
+    var delegate: RegistrationViewDelegate? { get set }
     func update(with data: RegistrationViewData)
 }
 
+protocol RegistrationViewDelegate: AnyObject {
+    func registrationButtonDidTap(login: String, password: String, repeatPassword: String)
+    func backButtonDidTap()
+}
+
 class RegistrationViewImp: UIView, RegistrationView {
-    var backAction: (() -> Void)?
     var registrationAction: (() -> Void)?
+
+    weak var delegate: RegistrationViewDelegate?
 
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var imageView: UIImageView!
@@ -29,7 +34,6 @@ class RegistrationViewImp: UIView, RegistrationView {
         imageView.contentMode = .scaleToFill
         let recognize = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
         addGestureRecognizer(recognize)
-        scrollView.keyboardDismissMode = .onDrag
         registrationLabel.text = data.registrationTextFieldPlaceholder
 
         enterLoginTextField.placeholder = data.enterLoginTextFielsPlaceholder
@@ -73,10 +77,25 @@ class RegistrationViewImp: UIView, RegistrationView {
     // MARK: - Actions
 
     @IBAction func doneButtonDidTap(_ sender: UIButton) {
+        enterLoginTextField.resignFirstResponder()
+        enterPasswordTextField.resignFirstResponder()
+        repeatPasswordTextField.resignFirstResponder()
+
+        guard enterPasswordTextField.text == repeatPasswordTextField.text else {
+            return
+        }
+        delegate?.registrationButtonDidTap(
+            login: enterLoginTextField.text ?? "",
+            password: enterPasswordTextField.text ?? "",
+            repeatPassword: repeatPasswordTextField.text ?? ""
+        )
     }
 
     @IBAction func backButtonDidTap(_ sender: UIButton) {
-        backAction?()
+        enterLoginTextField.resignFirstResponder()
+        enterPasswordTextField.resignFirstResponder()
+        repeatPasswordTextField.resignFirstResponder()
+        delegate?.backButtonDidTap()
     }
 
     @objc
