@@ -81,9 +81,6 @@ class RegistrationViewImp: UIView, RegistrationView {
         enterPasswordTextField.resignFirstResponder()
         repeatPasswordTextField.resignFirstResponder()
 
-        guard enterPasswordTextField.text == repeatPasswordTextField.text else {
-            return
-        }
         delegate?.registrationButtonDidTap(
             login: enterLoginTextField.text ?? "",
             password: enterPasswordTextField.text ?? "",

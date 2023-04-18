@@ -24,6 +24,9 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
 
 extension RegistrationViewController: RegistrationViewDelegate {
     func registrationButtonDidTap(login: String, password: String, repeatPassword: String) {
+        guard password == repeatPassword else {
+            return
+        }
         dataProvider.registration(username: login, password: password) { [weak self] result in
             switch result {
             case .success(let response):
