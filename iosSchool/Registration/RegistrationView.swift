@@ -3,6 +3,7 @@ import UIKit
 
 protocol RegistrationView: UIView {
     var delegate: RegistrationViewDelegate? { get set }
+    
     func update(with data: RegistrationViewData)
 }
 
