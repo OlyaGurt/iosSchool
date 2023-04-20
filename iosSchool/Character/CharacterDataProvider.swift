@@ -2,6 +2,10 @@ import Foundation
 
 protocol CharacterDataProvider {
     func character(characterId: String, completion: @escaping (Result<Character, ApiError>) -> Void)
+    func singleCharacter(
+            url: String,
+            completion: @escaping (Result<Character, ApiError>) -> Void
+        )
 }
 
 class CharacterDataProviderImp: CharacterDataProvider {
@@ -22,4 +26,18 @@ class CharacterDataProviderImp: CharacterDataProvider {
             }
         }
     }
+
+    func singleCharacter(
+            url: String,
+            completion: @escaping (Result<Character, ApiError>) -> Void
+        ) {
+            apiClient.singleCharacter(url: url) { result in
+                switch result {
+                case .success(let data):
+                    completion(.success(data))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+        }
 }

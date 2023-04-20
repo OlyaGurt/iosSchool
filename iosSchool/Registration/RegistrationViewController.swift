@@ -2,8 +2,6 @@ import UIKit
 
 class RegistrationViewController<View: RegistrationView>: BaseViewController<View> {
 
-    var closeRegistration: (() -> Void)?
-
     private let dataProvider: RegistrationDataProdiver
 
     init(dataProvider: RegistrationDataProdiver) {
@@ -18,8 +16,18 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
     override func viewDidLoad() {
         super.viewDidLoad()
         rootView.update(with: RegistrationViewData())
-        rootView.backAction = closeRegistration
-        dataProvider.registration(username: "olyagurt", password: "1111") { [weak self] result in
+        rootView.delegate = self
+    }
+}
+
+// MARK: - RegistrationViewDelegate
+
+extension RegistrationViewController: RegistrationViewDelegate {
+    func registrationButtonDidTap(login: String, password: String, repeatPassword: String) {
+        guard password == repeatPassword else {
+            return
+        }
+        dataProvider.registration(username: login, password: password) { [weak self] result in
             switch result {
             case .success(let response):
                 print("success")
@@ -29,5 +37,9 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
                 print("fail")
             }
         }
+    }
+
+    func backButtonDidTap() {
+        self.dismiss(animated: true)
     }
 }
