@@ -24,11 +24,35 @@ class CharacterViewController<View: CharacterView>: BaseViewController<View> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(named: "Lilac80")
+
+        rootView.makeViews()
+        let data = CharacterViewData(cells: charactersUrlsList.map { CharacterCellData(url: $0) })
+        rootView.update(with: data)
 
         charactersUrlsList.forEach { url in
             requestCharacter(url: url) { [weak self] character in
-                self?.imageService.getImage(url: character.image) { [weak self]image in
-                    print(image?.size ?? 0)
+                guard let self else {
+                    return
+                }
+                DispatchQueue.main.async {
+                    self.rootView.updateCharacter(url: character.url, with: CharacterCellData(
+                        character: character,
+                        isLoading: true,
+                        image: nil
+                    ))
+                }
+                self.imageService.getImage(url: character.image) { [weak self]image in
+                    guard let self else {
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        self.rootView.updateCharacter(url: character.url, with: CharacterCellData(
+                            character: character,
+                            isLoading: true,
+                            image: nil
+                        ))
+                    }
                 }
             }
         }
