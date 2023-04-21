@@ -6,7 +6,7 @@ struct LocationViewData {
     init(locations: LocationsList) {
         cellVM = locations.results.map { LocationCellData(
             location: $0,
-            population: "Населеиние \($0.residents.count)"
+            population: "Население: \($0.residents.count)"
         )}
     }
 }

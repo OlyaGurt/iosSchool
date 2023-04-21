@@ -52,7 +52,7 @@ class LocationViewController<View: LocationView>: BaseViewController<View> {
 //                action: #selector(reload)
 //            )
             navigationItem.rightBarButtonItem = UIBarButtonItem(
-                image: UIImage(named: "reload"),
+                image: UIImage(named: "reloadIcon"),
                 style: .done,
                 target: self,
                 action: #selector(reload)
