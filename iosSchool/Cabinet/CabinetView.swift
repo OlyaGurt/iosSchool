@@ -25,7 +25,10 @@ class CabinetViewImp: UIView, CabinetView {
 
     func makeView() {
         tableView.backgroundColor = UIColor(named: "NewLilac80")
+        tableView.separatorStyle = .none
         tableView.dataSource = self
+        tableView.contentInsetAdjustmentBehavior = .never
+
         let cabinetNib = UINib(nibName: CabinetIconCell.className, bundle: nil)
         tableView.register(cabinetNib, forCellReuseIdentifier: CabinetIconCell.className)
         addSubview(tableView)
@@ -35,6 +38,7 @@ class CabinetViewImp: UIView, CabinetView {
         let fieldNib = UINib(nibName: FieldCell.className, bundle: nil)
         tableView.register(fieldNib, forCellReuseIdentifier: FieldCell.className)
         addSubview(tableView)
+
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
