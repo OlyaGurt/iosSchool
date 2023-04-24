@@ -11,7 +11,7 @@ extension Assembly: AuthAssembly {
         AuthCoordinator(assembly: self, context: .init(onLoginSuccess: onLoginSuccess))
     }
     func authVC(onLoginSuccess: (() -> Void)?) -> AuthViewController<AuthViewImp> {
-        .init(dataProvider: authDataProvider(), onLoginSuccess: onLoginSuccess)
+        .init(dataProvider: authDataProvider(), storageManager: storageManager, onLoginSuccess: onLoginSuccess)
     }
 
     func authDataProvider() -> AuthDataProvider {
