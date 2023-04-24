@@ -68,9 +68,9 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
-                <outlet property="locationLable" destination="vkB-B9-gZv" id="O83-kd-dfp"/>
-                <outlet property="populationLable" destination="AmL-TB-3S9" id="Sg6-Mq-3nm"/>
-                <outlet property="typeLocationLable" destination="1hs-Yu-dJ1" id="Q5S-7H-D4r"/>
+                <outlet property="locationLabel" destination="vkB-B9-gZv" id="O83-kd-dfp"/>
+                <outlet property="populationLabel" destination="AmL-TB-3S9" id="Sg6-Mq-3nm"/>
+                <outlet property="typeLocationLabel" destination="1hs-Yu-dJ1" id="Q5S-7H-D4r"/>
             </connections>
             <point key="canvasLocation" x="13.076923076923077" y="45.85308056872038"/>
         </tableViewCell>

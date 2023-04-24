@@ -8,17 +8,17 @@ class LocationCell: UITableViewCell {
         }
     }
 
-    @IBOutlet private weak var locationLable: UILabel!
-    @IBOutlet private weak var typeLocationLable: UILabel!
-    @IBOutlet private weak var populationLable: UILabel!
+    @IBOutlet private weak var locationLabel: UILabel!
+    @IBOutlet private weak var typeLocationLabel: UILabel!
+    @IBOutlet private weak var populationLabel: UILabel!
 
     private func update(_ viewModel: LocationCellData?) {
         guard let viewModel else {
             return
         }
-        locationLable.text = viewModel.name
-        locationLable.font = .boldSystemFont(ofSize: 18)
-        typeLocationLable.text = viewModel.type
-        populationLable.text = viewModel.population
+        locationLabel.text = viewModel.name
+        locationLabel.font = .boldSystemFont(ofSize: 18)
+        typeLocationLabel.text = viewModel.type
+        populationLabel.text = viewModel.population
     }
 }

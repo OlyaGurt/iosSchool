@@ -1,9 +1,15 @@
 import Foundation
 import UIKit
 
-class CabinetViewController: UIViewController {
+class CabinetViewController<View: CabinetView>: BaseViewController<View> {
     override func viewDidLoad() {
+        rootView.backgroundColor = .white
+        rootView.makeView()
         super.viewDidLoad()
-        view.backgroundColor = .lightGray
     }
+}
+
+extension CabinetViewController: CabinetViewDelegate {
+    func backButtonDidTap() {
+        }
 }
