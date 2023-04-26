@@ -42,6 +42,7 @@ class LocationViewController<View: LocationView>: BaseViewController<View> {
     private func reload() {
         page = 1
         cellsVM = []
+        rootView.update(with: .init(cells: cellsVM))
         pagesLimited = false
         loadPage(page)
     }
