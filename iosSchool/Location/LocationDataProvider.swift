@@ -1,7 +1,7 @@
 import Foundation
 
 protocol LocationDataProvider {
-    func location(completion: @escaping (Result<LocationsList, ApiError>) -> Void)
+    func location(page: Int, completion: @escaping (Result<LocationsList, ApiError>) -> Void)
 }
 
 class LocationDataProviderImp: LocationDataProvider {
@@ -12,8 +12,8 @@ class LocationDataProviderImp: LocationDataProvider {
         self.apiClient = apiClient
     }
 
-    func location(completion: @escaping (Result<LocationsList, ApiError>) -> Void) {
-        apiClient.location { result in
+    func location(page: Int, completion: @escaping (Result<LocationsList, ApiError>) -> Void) {
+        apiClient.location(page: page) { result in
             switch result {
             case .success(let data):
                 completion(.success(data))
