@@ -23,10 +23,10 @@ class CharacterViewImp: UIView, CharacterView {
         collectionView.register(nib, forCellWithReuseIdentifier: CharacterCell.className)
         addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        collectionView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        collectionView.topAnchor.constraint(equalTo: topAnchor, constant: 59).isActive = true
+        collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        collectionView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 20).isActive = true
     }
 
     func update(with data: CharacterViewData) {
@@ -54,12 +54,12 @@ class CharacterViewImp: UIView, CharacterView {
     private func provider() -> UICollectionViewCompositionalLayoutSectionProvider {
         { _, _ in
             let itemSize = NSCollectionLayoutSize(
-                widthDimension: .fractionalWidth(0.5),
+                widthDimension: .estimated(167),
                 heightDimension: .estimated(167)
             )
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
             let groupSize = NSCollectionLayoutSize(
-                widthDimension: .fractionalWidth(1),
+                widthDimension: .estimated(167*2),
                 heightDimension: .estimated(167)
             )
             let group = NSCollectionLayoutGroup.horizontal(
