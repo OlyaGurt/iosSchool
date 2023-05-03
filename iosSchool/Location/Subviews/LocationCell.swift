@@ -17,7 +17,6 @@ class LocationCell: UITableViewCell {
             return
         }
         locationLabel.text = viewModel.name
-        locationLabel.font = .boldSystemFont(ofSize: 18)
         typeLocationLabel.text = viewModel.type
         populationLabel.text = viewModel.population
     }

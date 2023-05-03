@@ -11,5 +11,5 @@ class CabinetViewController<View: CabinetView>: BaseViewController<View> {
 
 extension CabinetViewController: CabinetViewDelegate {
     func backButtonDidTap() {
-        }
+    }
 }

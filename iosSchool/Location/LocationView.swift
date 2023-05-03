@@ -36,6 +36,7 @@ class LocationViewImp: UIView, LocationView {
         imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
 
         tableView.backgroundColor = .clear
+        tableView.separatorColor = UIColor(named: "TableSeparatorColor")
         tableView.contentInset = UIEdgeInsets(top: 4, left: 0, bottom: 4, right: 0)
         tableView.dataSource = self
         tableView.delegate = self
@@ -66,7 +67,6 @@ extension LocationViewImp: UITableViewDataSource {
 }
 
 extension LocationViewImp: UITableViewDelegate {
-
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 

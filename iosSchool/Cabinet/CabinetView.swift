@@ -17,6 +17,7 @@ class CabinetViewImp: UIView, CabinetView {
 
     weak var delegate: CabinetViewDelegate?
 
+    private let backgroundView = UIView()
     private let tableView = UITableView()
     private let backButton = CustomButton()
 
@@ -24,10 +25,14 @@ class CabinetViewImp: UIView, CabinetView {
     }
 
     func makeView() {
-        tableView.backgroundColor = UIColor(named: "NewLilac80")
+        makeBackgroundView()
+
+        self.backgroundColor = .white
         tableView.separatorStyle = .none
         tableView.dataSource = self
         tableView.contentInsetAdjustmentBehavior = .never
+        tableView.isScrollEnabled = false
+        tableView.backgroundColor = .clear
 
         let cabinetNib = UINib(nibName: CabinetIconCell.className, bundle: nil)
         tableView.register(cabinetNib, forCellReuseIdentifier: CabinetIconCell.className)
@@ -37,21 +42,31 @@ class CabinetViewImp: UIView, CabinetView {
         addSubview(tableView)
         let fieldNib = UINib(nibName: FieldCell.className, bundle: nil)
         tableView.register(fieldNib, forCellReuseIdentifier: FieldCell.className)
+        tableView.delegate = self
         addSubview(tableView)
+
+        makeButton(button: backButton)
 
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        tableView.bottomAnchor.constraint(greaterThanOrEqualTo: backButton.topAnchor, constant: 10).isActive = true
         tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-
-        addSubview(backButton)
-        makeButton(button: backButton)
     }
 
 // MARK: - Private methods
 
+    private func makeBackgroundView() {
+        addSubview(backgroundView)
+        backgroundView.backgroundColor = UIColor(named: "Lilac80")
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        backgroundView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        backgroundView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        backgroundView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+    }
     private func makeButton(button: CustomButton) {
+        addSubview(backButton)
         backButton.backgroundColor = UIColor(named: "VelvetBlue")
         backButton.normalColor = UIColor(named: "VelvetBlue") ?? .white
         backButton.highlightColor = .white
@@ -66,17 +81,16 @@ class CabinetViewImp: UIView, CabinetView {
         backButton.addTarget(self, action: #selector(backButtonDidTap), for: .touchUpInside)
 
         backButton.translatesAutoresizingMaskIntoConstraints = false
-        backButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
         backButton.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        backButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -46).isActive = true
+        backButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -15).isActive = true
         backButton.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
     }
 
 // MARK: - ObjFunctions
 
-        @objc func backButtonDidTap(sender: UIButton) {
-            delegate?.backButtonDidTap()
-        }
+    @objc func backButtonDidTap(sender: UIButton) {
+        delegate?.backButtonDidTap()
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -85,28 +99,23 @@ extension CabinetViewImp: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
     }
-
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        if indexPath.row == 0 {
+        switch indexPath.row {
+        case 0:
             if let customCell = tableView.dequeueReusableCell(
                 withIdentifier: CabinetIconCell.className,
                 for: indexPath
             ) as? CabinetIconCell {
                 return customCell
             }
-        }
-
-        if indexPath.row == 1 {
+        case 1:
             if let customCell = tableView.dequeueReusableCell(
                 withIdentifier: LoginLabelCell.className,
                 for: indexPath
             ) as? LoginLabelCell {
                 return customCell
             }
-        }
-
-        if indexPath.row == 2 {
+        case 2:
             if let customCell = tableView.dequeueReusableCell(
                 withIdentifier: FieldCell.className,
                 for: indexPath
@@ -116,9 +125,7 @@ extension CabinetViewImp: UITableViewDataSource {
                 customCell.makeColorView(color: .clear)
                 return customCell
             }
-        }
-
-        if indexPath.row == 3 {
+        case 3:
             if let customCell = tableView.dequeueReusableCell(
                 withIdentifier: FieldCell.className,
                 for: indexPath
@@ -128,7 +135,19 @@ extension CabinetViewImp: UITableViewDataSource {
                 customCell.makeColorView(color: UIColor(named: "Blue") ?? .clear)
                 return customCell
             }
+        default:
+            return UITableViewCell()
         }
         return UITableViewCell()
+    }
+}
+
+extension CabinetViewImp: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 1 {
+            let height = UIScreen.main.bounds.height
+            return height > 800 ? tableView.rowHeight : 60
+        }
+        return tableView.rowHeight
     }
 }
