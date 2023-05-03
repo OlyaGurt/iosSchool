@@ -20,21 +20,23 @@ class ImageServiceImp: ImageService {
         if let image = imageDict[url] {
             completion(image)
         }
-
+        if imageDict.count > 50 {
+            imageDict.removeAll()
+        }
         DispatchQueue.global().async {
-            self.apiClient.requestImageData(url: url, completion: { [weak self] result in
+            self.apiClient.requestImageData(url: url) { [weak self] result in
                 guard let result else {
+                    print("Image load failed")
+                    return
+                }
+                guard let image = UIImage(data: result) else {
                     return
                 }
                 self?.updateQueue.async {
-                    if self?.imageDict.count ?? 0 > 50 {
-                        self?.imageDict.removeAll()
-                    }
-                    let image = UIImage(data: result)
                     self?.imageDict[url] = image
                     completion(image)
                 }
-            })
+            }
         }
     }
 }
