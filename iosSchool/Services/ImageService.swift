@@ -26,7 +26,7 @@ class ImageServiceImp: ImageService {
         DispatchQueue.global().async {
             self.apiClient.requestImageData(url: url) { [weak self] result in
                 guard let result else {
-                    print("Image load failed")
+                    completion(nil)
                     return
                 }
                 guard let image = UIImage(data: result) else {
