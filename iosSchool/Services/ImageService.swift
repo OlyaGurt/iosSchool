@@ -30,6 +30,7 @@ class ImageServiceImp: ImageService {
                     return
                 }
                 guard let image = UIImage(data: result) else {
+                    completion(nil)
                     return
                 }
                 self?.updateQueue.async {
