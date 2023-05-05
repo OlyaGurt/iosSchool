@@ -120,9 +120,13 @@ extension CabinetViewImp: UITableViewDataSource {
                 withIdentifier: FieldCell.className,
                 for: indexPath
             ) as? FieldCell {
-                customCell.makeField()
-                customCell.makeLabel(textLabel: "Дата регистрации", date: "11.10.2023")
-                customCell.makeColorView(color: .clear)
+                let viewModel = FieldCellData(
+                    textLabel: "Дата регистрации",
+                    date: "11.10.2000",
+                    color: nil,
+                    colorIsHidden: true
+                )
+                customCell.viewModel = viewModel
                 return customCell
             }
         case 3:
@@ -130,9 +134,13 @@ extension CabinetViewImp: UITableViewDataSource {
                 withIdentifier: FieldCell.className,
                 for: indexPath
             ) as? FieldCell {
-                customCell.makeField()
-                customCell.makeLabel(textLabel: "Цвет профиля", date: "")
-                customCell.makeColorView(color: UIColor(named: "Blue") ?? .clear)
+                let viewModel = FieldCellData(
+                    textLabel: "Цвет профиля",
+                    date: nil,
+                    color: .blue,
+                    colorIsHidden: false
+                )
+                customCell.viewModel = viewModel
                 return customCell
             }
         default:
