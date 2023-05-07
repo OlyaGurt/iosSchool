@@ -153,8 +153,7 @@ extension CabinetViewImp: UITableViewDataSource {
 extension CabinetViewImp: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 1 {
-            let height = UIScreen.main.bounds.height
-            return height > 800 ? tableView.rowHeight : 60
+            return UIScreen.main.bounds.height > 800 ? tableView.rowHeight : 60
         }
         return tableView.rowHeight
     }
