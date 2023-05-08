@@ -28,10 +28,23 @@
 		6C057E7929CCAD1100BBB0AF /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C057E7829CCAD1100BBB0AF /* RegistrationView.swift */; };
 		6C057E7B29CCAD6C00BBB0AF /* RegistrationViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C057E7A29CCAD6C00BBB0AF /* RegistrationViewData.swift */; };
 		6C065E2929F145D300BA20EC /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C065E2829F145D300BA20EC /* ImageService.swift */; };
+
+		6C09AEDF29F3018000C1BA56 /* CabinetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C09AEDE29F3018000C1BA56 /* CabinetView.swift */; };
+		6C09AEEA29F3AFEA00C1BA56 /* CabinetIconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C09AEE829F3AFEA00C1BA56 /* CabinetIconCell.swift */; };
+		6C09AEEB29F3AFEA00C1BA56 /* CabinetIconCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C09AEE929F3AFEA00C1BA56 /* CabinetIconCell.xib */; };
+		6C09AEEE29F54C8F00C1BA56 /* LoginLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C09AEEC29F54C8F00C1BA56 /* LoginLabelCell.swift */; };
+		6C09AEEF29F54C8F00C1BA56 /* LoginLabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C09AEED29F54C8F00C1BA56 /* LoginLabelCell.xib */; };
+		6C09AEF429F57C6400C1BA56 /* FieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C09AEF229F57C6400C1BA56 /* FieldCell.swift */; };
+		6C09AEF529F57C6400C1BA56 /* FieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C09AEF329F57C6400C1BA56 /* FieldCell.xib */; };
+		6C246DAF2A0369C600568E49 /* LoginLabelCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C246DAE2A0369C600568E49 /* LoginLabelCellData.swift */; };
+		6C246DB12A0431EB00568E49 /* FieldCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C246DB02A0431EB00568E49 /* FieldCellData.swift */; };
+		6C246DB32A04A90000568E49 /* CabinetIconCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C246DB22A04A90000568E49 /* CabinetIconCellData.swift */; };
+
 		6C09AEFA29F6B00C00C1BA56 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 6C09AEF929F6B00C00C1BA56 /* KeychainAccess */; };
 		6C09AEFC29F6B05300C1BA56 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C09AEFB29F6B05300C1BA56 /* StorageManager.swift */; };
 		6C09AEFF29F6BCD100C1BA56 /* SPIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 6C09AEFE29F6BCD100C1BA56 /* SPIndicator */; };
 		6C09AF0229F6C19300C1BA56 /* PKHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 6C09AF0129F6C19300C1BA56 /* PKHUD */; };
+
 		6C505A0529DFD22000C42414 /* RegistrationViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C505A0429DFD22000C42414 /* RegistrationViewImp.xib */; };
 		6C81EBF429F2BC600094DEBC /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C81EBF229F2BC600094DEBC /* CharacterCell.swift */; };
 		6C81EBF529F2BC600094DEBC /* CharacterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C81EBF329F2BC600094DEBC /* CharacterCell.xib */; };
@@ -62,6 +75,7 @@
 		6CBE3CA029DABB6A00D656DF /* CharacterAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBE3C9F29DABB6A00D656DF /* CharacterAssembly.swift */; };
 		6CBE3CA229DABBD700D656DF /* CharacterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBE3CA129DABBD700D656DF /* CharacterCoordinator.swift */; };
 		6CBE3CA429DABC2900D656DF /* CharacterApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBE3CA329DABC2900D656DF /* CharacterApiClient.swift */; };
+
 		6CCBB63429EE56FB0057B58B /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCBB63329EE56FB0057B58B /* SplashView.swift */; };
 		6CCEEE6229BF4B9B00A0E661 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEEE6129BF4B9B00A0E661 /* AppDelegate.swift */; };
 		6CCEEE6429BF4B9B00A0E661 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEEE6329BF4B9B00A0E661 /* SceneDelegate.swift */; };
@@ -105,7 +119,20 @@
 		6C057E7829CCAD1100BBB0AF /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		6C057E7A29CCAD6C00BBB0AF /* RegistrationViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewData.swift; sourceTree = "<group>"; };
 		6C065E2829F145D300BA20EC /* ImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+
+6C09AEDE29F3018000C1BA56 /* CabinetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabinetView.swift; sourceTree = "<group>"; };
+		6C09AEE829F3AFEA00C1BA56 /* CabinetIconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabinetIconCell.swift; sourceTree = "<group>"; };
+		6C09AEE929F3AFEA00C1BA56 /* CabinetIconCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CabinetIconCell.xib; sourceTree = "<group>"; };
+		6C09AEEC29F54C8F00C1BA56 /* LoginLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginLabelCell.swift; sourceTree = "<group>"; };
+		6C09AEED29F54C8F00C1BA56 /* LoginLabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginLabelCell.xib; sourceTree = "<group>"; };
+		6C09AEF229F57C6400C1BA56 /* FieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldCell.swift; sourceTree = "<group>"; };
+		6C09AEF329F57C6400C1BA56 /* FieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FieldCell.xib; sourceTree = "<group>"; };
+		6C246DAE2A0369C600568E49 /* LoginLabelCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginLabelCellData.swift; sourceTree = "<group>"; };
+		6C246DB02A0431EB00568E49 /* FieldCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldCellData.swift; sourceTree = "<group>"; };
+		6C246DB22A04A90000568E49 /* CabinetIconCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabinetIconCellData.swift; sourceTree = "<group>"; };
+
 		6C09AEFB29F6B05300C1BA56 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+
 		6C505A0429DFD22000C42414 /* RegistrationViewImp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewImp.xib; sourceTree = "<group>"; };
 		6C81EBF229F2BC600094DEBC /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		6C81EBF329F2BC600094DEBC /* CharacterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterCell.xib; sourceTree = "<group>"; };
@@ -136,6 +163,7 @@
 		6CBE3C9F29DABB6A00D656DF /* CharacterAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterAssembly.swift; sourceTree = "<group>"; };
 		6CBE3CA129DABBD700D656DF /* CharacterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCoordinator.swift; sourceTree = "<group>"; };
 		6CBE3CA329DABC2900D656DF /* CharacterApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterApiClient.swift; sourceTree = "<group>"; };
+
 		6CCBB63329EE56FB0057B58B /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		6CCEEE5E29BF4B9B00A0E661 /* iosSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CCEEE6129BF4B9B00A0E661 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -213,6 +241,22 @@
 				6C057E7A29CCAD6C00BBB0AF /* RegistrationViewData.swift */,
 			);
 			path = Registration;
+			sourceTree = "<group>";
+		};
+		6C09AEE729F3AFC200C1BA56 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				6C09AEE829F3AFEA00C1BA56 /* CabinetIconCell.swift */,
+				6C246DB22A04A90000568E49 /* CabinetIconCellData.swift */,
+				6C09AEE929F3AFEA00C1BA56 /* CabinetIconCell.xib */,
+				6C09AEEC29F54C8F00C1BA56 /* LoginLabelCell.swift */,
+				6C246DAE2A0369C600568E49 /* LoginLabelCellData.swift */,
+				6C09AEED29F54C8F00C1BA56 /* LoginLabelCell.xib */,
+				6C09AEF229F57C6400C1BA56 /* FieldCell.swift */,
+				6C246DB02A0431EB00568E49 /* FieldCellData.swift */,
+				6C09AEF329F57C6400C1BA56 /* FieldCell.xib */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		6C5059FF29DFCFF000C42414 /* Subviews */ = {
@@ -319,6 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				6C065E2829F145D300BA20EC /* ImageService.swift */,
+        
 				6C09AEFB29F6B05300C1BA56 /* StorageManager.swift */,
 			);
 			path = Services;
@@ -371,9 +416,11 @@
 		6CEC6ED029E445F40070CD1A /* Cabinet */ = {
 			isa = PBXGroup;
 			children = (
+				6C09AEE729F3AFC200C1BA56 /* Subviews */,
 				6CEC6ED129E4461A0070CD1A /* CabinetViewController.swift */,
 				6CEC6ED329E4462C0070CD1A /* CabinetCoordinator.swift */,
 				6CEC6ED529E446420070CD1A /* CabinetAssembly.swift */,
+				6C09AEDE29F3018000C1BA56 /* CabinetView.swift */,
 			);
 			path = Cabinet;
 			sourceTree = "<group>";
@@ -465,6 +512,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C09AEEB29F3AFEA00C1BA56 /* CabinetIconCell.xib in Resources */,
+				6C09AEEF29F54C8F00C1BA56 /* LoginLabelCell.xib in Resources */,
+				6C09AEF529F57C6400C1BA56 /* FieldCell.xib in Resources */,
 				6C81EBF529F2BC600094DEBC /* CharacterCell.xib in Resources */,
 				6CEC6EDD29E98AE40070CD1A /* LocationCell.xib in Resources */,
 				6C505A0529DFD22000C42414 /* RegistrationViewImp.xib in Resources */,
@@ -510,15 +560,20 @@
 				6CEC6EE229E98E7A0070CD1A /* NSObject+ClassName.swift in Sources */,
 				6CBE3C8029DA92A600D656DF /* LocationApiClient.swift in Sources */,
 				6CBE3C8929DA99D400D656DF /* LocationAssembly.swift in Sources */,
+				6C246DAF2A0369C600568E49 /* LoginLabelCellData.swift in Sources */,
 				6C057E5D29C8991C00BBB0AF /* AuthAssembly.swift in Sources */,
 				6CBE3C9C29DABA8100D656DF /* CharacterDataProvider.swift in Sources */,
 				6CEC6ED429E4462C0070CD1A /* CabinetCoordinator.swift in Sources */,
 				6C057E4D29C4A7E100BBB0AF /* Homework1.swift in Sources */,
+				6C09AEEE29F54C8F00C1BA56 /* LoginLabelCell.swift in Sources */,
 				6CBE3C7C29D71EEF00D656DF /* CustomButton.swift in Sources */,
+				6C246DB32A04A90000568E49 /* CabinetIconCellData.swift in Sources */,
+
 				6C065E2929F145D300BA20EC /* ImageService.swift in Sources */,
 				6CBE3C7A29D718C300D656DF /* BaseViewController.swift in Sources */,
 				6CBE3C9329DAB62800D656DF /* LocationList.swift in Sources */,
 				6CEC6ED629E446420070CD1A /* CabinetAssembly.swift in Sources */,
+				6C246DB12A0431EB00568E49 /* FieldCellData.swift in Sources */,
 				6CEC6ED229E4461A0070CD1A /* CabinetViewController.swift in Sources */,
 				6CEC6ED829E449960070CD1A /* RootTab.swift in Sources */,
 				6CBE3C9E29DABAD400D656DF /* Character.swift in Sources */,
@@ -542,6 +597,7 @@
 				6CBE3C8729DA999600D656DF /* LocationViewController.swift in Sources */,
 				6CBE3C7E29D9ADBD00D656DF /* RegistrationApiClient.swift in Sources */,
 				6C057E4B29C4A62D00BBB0AF /* Assembly.swift in Sources */,
+				6C09AEEA29F3AFEA00C1BA56 /* CabinetIconCell.swift in Sources */,
 				6C057E7929CCAD1100BBB0AF /* RegistrationView.swift in Sources */,
 				6C057E7529CCA71B00BBB0AF /* RegistrationAssembly.swift in Sources */,
 				6CCEEE7629BF58AA00A0E661 /* ColorGenerator.swift in Sources */,
@@ -552,9 +608,11 @@
 				6C057E5329C8908C00BBB0AF /* BaseCoordinator.swift in Sources */,
 				6CBE3C7229D1CC2B00D656DF /* AuthApiClient.swift in Sources */,
 				6CBE3CA429DABC2900D656DF /* CharacterApiClient.swift in Sources */,
+				6C09AEF429F57C6400C1BA56 /* FieldCell.swift in Sources */,
 				6CBE3CA029DABB6A00D656DF /* CharacterAssembly.swift in Sources */,
 				6CBE3CA229DABBD700D656DF /* CharacterCoordinator.swift in Sources */,
 				6C057E7329CC08E400BBB0AF /* RegistrationDataProvider.swift in Sources */,
+				6C09AEDF29F3018000C1BA56 /* CabinetView.swift in Sources */,
 				6CEC6EDC29E98AE40070CD1A /* LocationCell.swift in Sources */,
 				6CEC6ECD29E440450070CD1A /* TabBarController.swift in Sources */,
 				6CBE3C7429D1D3A300D656DF /* ApiError.swift in Sources */,

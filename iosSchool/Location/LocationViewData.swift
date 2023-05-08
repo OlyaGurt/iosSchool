@@ -3,7 +3,10 @@ import Foundation
 struct LocationViewData {
     let cellVM: [LocationCellData]
 
-    init(cells: [LocationCellData]) {
-        cellVM = cells
+    init(locations: LocationsList) {
+        cellVM = locations.results.map { LocationCellData(
+            location: $0,
+            population: "Население: \($0.residents.count)"
+        )}
     }
 }

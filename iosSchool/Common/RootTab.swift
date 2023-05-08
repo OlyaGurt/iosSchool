@@ -31,9 +31,9 @@ enum RootTab: Int {
     private var image: UIImage? {
         switch self {
         case .locations:
-            return UIImage(named: "locations")
+            return UIImage(named: "locationsIcon")
         case .cabinet:
-            return UIImage(named: "cabinet")
+            return UIImage(named: "cabinetIcon")
         }
     }
 }
