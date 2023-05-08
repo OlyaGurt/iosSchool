@@ -28,6 +28,7 @@
 		6C057E7929CCAD1100BBB0AF /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C057E7829CCAD1100BBB0AF /* RegistrationView.swift */; };
 		6C057E7B29CCAD6C00BBB0AF /* RegistrationViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C057E7A29CCAD6C00BBB0AF /* RegistrationViewData.swift */; };
 		6C065E2929F145D300BA20EC /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C065E2829F145D300BA20EC /* ImageService.swift */; };
+
 		6C09AEDF29F3018000C1BA56 /* CabinetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C09AEDE29F3018000C1BA56 /* CabinetView.swift */; };
 		6C09AEEA29F3AFEA00C1BA56 /* CabinetIconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C09AEE829F3AFEA00C1BA56 /* CabinetIconCell.swift */; };
 		6C09AEEB29F3AFEA00C1BA56 /* CabinetIconCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C09AEE929F3AFEA00C1BA56 /* CabinetIconCell.xib */; };
@@ -38,7 +39,16 @@
 		6C246DAF2A0369C600568E49 /* LoginLabelCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C246DAE2A0369C600568E49 /* LoginLabelCellData.swift */; };
 		6C246DB12A0431EB00568E49 /* FieldCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C246DB02A0431EB00568E49 /* FieldCellData.swift */; };
 		6C246DB32A04A90000568E49 /* CabinetIconCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C246DB22A04A90000568E49 /* CabinetIconCellData.swift */; };
+
+		6C09AEFA29F6B00C00C1BA56 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 6C09AEF929F6B00C00C1BA56 /* KeychainAccess */; };
+		6C09AEFC29F6B05300C1BA56 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C09AEFB29F6B05300C1BA56 /* StorageManager.swift */; };
+		6C09AEFF29F6BCD100C1BA56 /* SPIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 6C09AEFE29F6BCD100C1BA56 /* SPIndicator */; };
+		6C09AF0229F6C19300C1BA56 /* PKHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 6C09AF0129F6C19300C1BA56 /* PKHUD */; };
+
 		6C505A0529DFD22000C42414 /* RegistrationViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C505A0429DFD22000C42414 /* RegistrationViewImp.xib */; };
+		6C81EBF429F2BC600094DEBC /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C81EBF229F2BC600094DEBC /* CharacterCell.swift */; };
+		6C81EBF529F2BC600094DEBC /* CharacterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C81EBF329F2BC600094DEBC /* CharacterCell.xib */; };
+		6C81EBF729F2BDDD0094DEBC /* CharacterCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C81EBF629F2BDDD0094DEBC /* CharacterCellData.swift */; };
 		6CBE3C6929D1BFBF00D656DF /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBE3C6829D1BFBF00D656DF /* Location.swift */; };
 		6CBE3C6B29D1C2FF00D656DF /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBE3C6A29D1C2FF00D656DF /* TokenResponse.swift */; };
 		6CBE3C6E29D1C56400D656DF /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBE3C6D29D1C56400D656DF /* ApiClient.swift */; };
@@ -65,6 +75,8 @@
 		6CBE3CA029DABB6A00D656DF /* CharacterAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBE3C9F29DABB6A00D656DF /* CharacterAssembly.swift */; };
 		6CBE3CA229DABBD700D656DF /* CharacterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBE3CA129DABBD700D656DF /* CharacterCoordinator.swift */; };
 		6CBE3CA429DABC2900D656DF /* CharacterApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBE3CA329DABC2900D656DF /* CharacterApiClient.swift */; };
+
+		6CCBB63429EE56FB0057B58B /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCBB63329EE56FB0057B58B /* SplashView.swift */; };
 		6CCEEE6229BF4B9B00A0E661 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEEE6129BF4B9B00A0E661 /* AppDelegate.swift */; };
 		6CCEEE6429BF4B9B00A0E661 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEEE6329BF4B9B00A0E661 /* SceneDelegate.swift */; };
 		6CCEEE6629BF4B9B00A0E661 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEEE6529BF4B9B00A0E661 /* ViewController.swift */; };
@@ -81,6 +93,8 @@
 		6CEC6EDD29E98AE40070CD1A /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CEC6EDB29E98AE40070CD1A /* LocationCell.xib */; };
 		6CEC6EDF29E98B1C0070CD1A /* LocationCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEC6EDE29E98B1C0070CD1A /* LocationCellData.swift */; };
 		6CEC6EE229E98E7A0070CD1A /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEC6EE129E98E7A0070CD1A /* NSObject+ClassName.swift */; };
+		6CEC6EE429EABD070070CD1A /* SplashViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CEC6EE329EABD070070CD1A /* SplashViewImp.xib */; };
+		6CEC6EE829EABFAA0070CD1A /* SplashViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEC6EE729EABFAA0070CD1A /* SplashViewData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,7 +119,8 @@
 		6C057E7829CCAD1100BBB0AF /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		6C057E7A29CCAD6C00BBB0AF /* RegistrationViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewData.swift; sourceTree = "<group>"; };
 		6C065E2829F145D300BA20EC /* ImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
-		6C09AEDE29F3018000C1BA56 /* CabinetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabinetView.swift; sourceTree = "<group>"; };
+
+6C09AEDE29F3018000C1BA56 /* CabinetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabinetView.swift; sourceTree = "<group>"; };
 		6C09AEE829F3AFEA00C1BA56 /* CabinetIconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabinetIconCell.swift; sourceTree = "<group>"; };
 		6C09AEE929F3AFEA00C1BA56 /* CabinetIconCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CabinetIconCell.xib; sourceTree = "<group>"; };
 		6C09AEEC29F54C8F00C1BA56 /* LoginLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginLabelCell.swift; sourceTree = "<group>"; };
@@ -115,7 +130,13 @@
 		6C246DAE2A0369C600568E49 /* LoginLabelCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginLabelCellData.swift; sourceTree = "<group>"; };
 		6C246DB02A0431EB00568E49 /* FieldCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldCellData.swift; sourceTree = "<group>"; };
 		6C246DB22A04A90000568E49 /* CabinetIconCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabinetIconCellData.swift; sourceTree = "<group>"; };
+
+		6C09AEFB29F6B05300C1BA56 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+
 		6C505A0429DFD22000C42414 /* RegistrationViewImp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewImp.xib; sourceTree = "<group>"; };
+		6C81EBF229F2BC600094DEBC /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
+		6C81EBF329F2BC600094DEBC /* CharacterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterCell.xib; sourceTree = "<group>"; };
+		6C81EBF629F2BDDD0094DEBC /* CharacterCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCellData.swift; sourceTree = "<group>"; };
 		6CBE3C6829D1BFBF00D656DF /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		6CBE3C6A29D1C2FF00D656DF /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
 		6CBE3C6D29D1C56400D656DF /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
@@ -142,6 +163,8 @@
 		6CBE3C9F29DABB6A00D656DF /* CharacterAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterAssembly.swift; sourceTree = "<group>"; };
 		6CBE3CA129DABBD700D656DF /* CharacterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCoordinator.swift; sourceTree = "<group>"; };
 		6CBE3CA329DABC2900D656DF /* CharacterApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterApiClient.swift; sourceTree = "<group>"; };
+
+		6CCBB63329EE56FB0057B58B /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		6CCEEE5E29BF4B9B00A0E661 /* iosSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CCEEE6129BF4B9B00A0E661 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CCEEE6329BF4B9B00A0E661 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -160,6 +183,8 @@
 		6CEC6EDB29E98AE40070CD1A /* LocationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationCell.xib; sourceTree = "<group>"; };
 		6CEC6EDE29E98B1C0070CD1A /* LocationCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCellData.swift; sourceTree = "<group>"; };
 		6CEC6EE129E98E7A0070CD1A /* NSObject+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
+		6CEC6EE329EABD070070CD1A /* SplashViewImp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewImp.xib; sourceTree = "<group>"; };
+		6CEC6EE729EABFAA0070CD1A /* SplashViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +192,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C09AF0229F6C19300C1BA56 /* PKHUD in Frameworks */,
+				6C09AEFA29F6B00C00C1BA56 /* KeychainAccess in Frameworks */,
+				6C09AEFF29F6BCD100C1BA56 /* SPIndicator in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +222,9 @@
 				6C057E6729C89EAD00BBB0AF /* SplashDataProvider.swift */,
 				6C057E6929C89F1800BBB0AF /* SplashAssembly.swift */,
 				6C057E6B29C89FE700BBB0AF /* SplashCoordinator.swift */,
+				6CEC6EE329EABD070070CD1A /* SplashViewImp.xib */,
+				6CEC6EE729EABFAA0070CD1A /* SplashViewData.swift */,
+				6CCBB63329EE56FB0057B58B /* SplashView.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -232,6 +263,16 @@
 			isa = PBXGroup;
 			children = (
 				6C505A0429DFD22000C42414 /* RegistrationViewImp.xib */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		6C81EBF129F2BC390094DEBC /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				6C81EBF229F2BC600094DEBC /* CharacterCell.swift */,
+				6C81EBF329F2BC600094DEBC /* CharacterCell.xib */,
+				6C81EBF629F2BDDD0094DEBC /* CharacterCellData.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -307,6 +348,7 @@
 		6CBE3C9429DAB98600D656DF /* Character */ = {
 			isa = PBXGroup;
 			children = (
+				6C81EBF129F2BC390094DEBC /* Subviews */,
 				6CBE3C9529DAB9E500D656DF /* CharacrerViewController.swift */,
 				6CBE3C9B29DABA8100D656DF /* CharacterDataProvider.swift */,
 				6CBE3C9729DABA3500D656DF /* CharacterView.swift */,
@@ -321,6 +363,8 @@
 			isa = PBXGroup;
 			children = (
 				6C065E2829F145D300BA20EC /* ImageService.swift */,
+        
+				6C09AEFB29F6B05300C1BA56 /* StorageManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -416,6 +460,11 @@
 			dependencies = (
 			);
 			name = iosSchool;
+			packageProductDependencies = (
+				6C09AEF929F6B00C00C1BA56 /* KeychainAccess */,
+				6C09AEFE29F6BCD100C1BA56 /* SPIndicator */,
+				6C09AF0129F6C19300C1BA56 /* PKHUD */,
+			);
 			productName = iosSchool;
 			productReference = 6CCEEE5E29BF4B9B00A0E661 /* iosSchool.app */;
 			productType = "com.apple.product-type.application";
@@ -444,6 +493,11 @@
 				Base,
 			);
 			mainGroup = 6CCEEE5529BF4B9B00A0E661;
+			packageReferences = (
+				6C09AEF829F6B00C00C1BA56 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				6C09AEFD29F6BCD100C1BA56 /* XCRemoteSwiftPackageReference "SPIndicator" */,
+				6C09AF0029F6C19300C1BA56 /* XCRemoteSwiftPackageReference "PKHUD" */,
+			);
 			productRefGroup = 6CCEEE5F29BF4B9B00A0E661 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -461,10 +515,12 @@
 				6C09AEEB29F3AFEA00C1BA56 /* CabinetIconCell.xib in Resources */,
 				6C09AEEF29F54C8F00C1BA56 /* LoginLabelCell.xib in Resources */,
 				6C09AEF529F57C6400C1BA56 /* FieldCell.xib in Resources */,
+				6C81EBF529F2BC600094DEBC /* CharacterCell.xib in Resources */,
 				6CEC6EDD29E98AE40070CD1A /* LocationCell.xib in Resources */,
 				6C505A0529DFD22000C42414 /* RegistrationViewImp.xib in Resources */,
 				6CCEEE6E29BF4B9B00A0E661 /* LaunchScreen.storyboard in Resources */,
 				6CCEEE6B29BF4B9B00A0E661 /* Assets.xcassets in Resources */,
+				6CEC6EE429EABD070070CD1A /* SplashViewImp.xib in Resources */,
 				6CBE3C7729D7079100D656DF /* AuthViewImp.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,6 +556,7 @@
 				6CBE3C9629DAB9E500D656DF /* CharacrerViewController.swift in Sources */,
 				6CCEEE6629BF4B9B00A0E661 /* ViewController.swift in Sources */,
 				6C057E7729CCA7E000BBB0AF /* RegistrationCoordinator.swift in Sources */,
+				6C81EBF429F2BC600094DEBC /* CharacterCell.swift in Sources */,
 				6CEC6EE229E98E7A0070CD1A /* NSObject+ClassName.swift in Sources */,
 				6CBE3C8029DA92A600D656DF /* LocationApiClient.swift in Sources */,
 				6CBE3C8929DA99D400D656DF /* LocationAssembly.swift in Sources */,
@@ -511,6 +568,7 @@
 				6C09AEEE29F54C8F00C1BA56 /* LoginLabelCell.swift in Sources */,
 				6CBE3C7C29D71EEF00D656DF /* CustomButton.swift in Sources */,
 				6C246DB32A04A90000568E49 /* CabinetIconCellData.swift in Sources */,
+
 				6C065E2929F145D300BA20EC /* ImageService.swift in Sources */,
 				6CBE3C7A29D718C300D656DF /* BaseViewController.swift in Sources */,
 				6CBE3C9329DAB62800D656DF /* LocationList.swift in Sources */,
@@ -519,6 +577,7 @@
 				6CEC6ED229E4461A0070CD1A /* CabinetViewController.swift in Sources */,
 				6CEC6ED829E449960070CD1A /* RootTab.swift in Sources */,
 				6CBE3C9E29DABAD400D656DF /* Character.swift in Sources */,
+				6CCBB63429EE56FB0057B58B /* SplashView.swift in Sources */,
 				6C057E6C29C89FE700BBB0AF /* SplashCoordinator.swift in Sources */,
 				6CBE3C8B29DA99E500D656DF /* LocationCoordinator.swift in Sources */,
 				6CEC6ECF29E441090070CD1A /* BaseNavigationController.swift in Sources */,
@@ -534,6 +593,7 @@
 				6C057E5B29C8983D00BBB0AF /* AuthViewController.swift in Sources */,
 				6CBE3C6E29D1C56400D656DF /* ApiClient.swift in Sources */,
 				6CBE3C9829DABA3500D656DF /* CharacterView.swift in Sources */,
+				6C81EBF729F2BDDD0094DEBC /* CharacterCellData.swift in Sources */,
 				6CBE3C8729DA999600D656DF /* LocationViewController.swift in Sources */,
 				6CBE3C7E29D9ADBD00D656DF /* RegistrationApiClient.swift in Sources */,
 				6C057E4B29C4A62D00BBB0AF /* Assembly.swift in Sources */,
@@ -563,6 +623,8 @@
 				6C057E7B29CCAD6C00BBB0AF /* RegistrationViewData.swift in Sources */,
 				6CBE3C7029D1C58700D656DF /* NetworkConstans.swift in Sources */,
 				6CBE3C8529DA997000D656DF /* LocationDataProvider.swift in Sources */,
+				6CEC6EE829EABFAA0070CD1A /* SplashViewData.swift in Sources */,
+				6C09AEFC29F6B05300C1BA56 /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -770,6 +832,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6C09AEF829F6B00C00C1BA56 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		6C09AEFD29F6BCD100C1BA56 /* XCRemoteSwiftPackageReference "SPIndicator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ivanvorobei/SPIndicator";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		6C09AF0029F6C19300C1BA56 /* XCRemoteSwiftPackageReference "PKHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pkluz/PKHUD";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6C09AEF929F6B00C00C1BA56 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6C09AEF829F6B00C00C1BA56 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+		6C09AEFE29F6BCD100C1BA56 /* SPIndicator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6C09AEFD29F6BCD100C1BA56 /* XCRemoteSwiftPackageReference "SPIndicator" */;
+			productName = SPIndicator;
+		};
+		6C09AF0129F6C19300C1BA56 /* PKHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6C09AF0029F6C19300C1BA56 /* XCRemoteSwiftPackageReference "PKHUD" */;
+			productName = PKHUD;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6CCEEE5629BF4B9B00A0E661 /* Project object */;
 }

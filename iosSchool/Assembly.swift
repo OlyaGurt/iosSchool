@@ -8,6 +8,7 @@ class Assembly {
     }
 
     lazy var imageService: ImageService = ImageServiceImp(apiClient: apiClient)
+    lazy var storageManager: StorageManager = StorageManagerImp()
 
     func colorGeneratore(alpha: Double) -> ColorGenerator {
         ColorGenerator(alpha: alpha)

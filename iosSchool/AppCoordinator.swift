@@ -15,6 +15,10 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
     }
 
     private func startAuth() {
+        guard assembly.storageManager.getTocken() == nil else {
+            setTapVC()
+            return
+        }
         let coordinator = assembly.authCoordinator { [ weak self] in
             DispatchQueue.main.async {
                 self?.setTapVC()
