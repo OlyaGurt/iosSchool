@@ -68,23 +68,14 @@ class StorageManagerImp: StorageManager {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd.MM.yyyy"
         let result = dateFormatter.string(from: date)
-        do {
-            try keychein.set(result, key: StorageManagerKey.lastLaunch.rawValue)
-        } catch {
-            print(error as Any)
-        }
+        UserDefaults.standard.set(result, forKey: StorageManagerKey.lastLaunch.rawValue)
     }
 
     func getLastLaunchDate() -> String? {
-        do {
-            guard let date = try keychein.get(StorageManagerKey.lastLaunch.rawValue) else {
-                return nil
-            }
-            return date
-        } catch {
-            print(error as Any)
+        guard let date = UserDefaults.standard.string(forKey: StorageManagerKey.lastLaunch.rawValue) else {
+            return nil
         }
-        return nil
+        return date
     }
 
     func saveUsername(cabinet: Cabinet?) {
