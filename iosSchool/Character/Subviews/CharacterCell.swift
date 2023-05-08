@@ -19,7 +19,7 @@ class CharacterCell: UICollectionViewCell {
         }
         imageView.image = viewModel.isLoading ? UIImage(named: "character1") : viewModel.image
         nameLabel.text = viewModel.name
-        typeLabel.text = viewModel.type
+        typeLabel.text = (viewModel.gender ?? "") + " " + (viewModel.type ?? "")
     }
 
     private func makeCell() {
