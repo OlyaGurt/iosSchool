@@ -57,12 +57,12 @@ class CharacterViewImp: UIView, CharacterView {
         { _, _ in
             let itemSize = NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(0.5),
-                heightDimension: .estimated(167)
+                heightDimension: .absolute(167)
             )
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
             let groupSize = NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(1),
-                heightDimension: .estimated(167)
+                heightDimension: .absolute(167)
             )
             let group = NSCollectionLayoutGroup.horizontal(
                 layoutSize: groupSize,
