@@ -22,7 +22,7 @@ class CharacterCell: UICollectionViewCell {
         guard let viewModel else {
             return
         }
-        imageView.image = viewModel.isLoading ? UIImage(named: "character1") : viewModel.image
+        imageView.image = viewModel.isLoading ? viewModel.image : UIImage(named: "character1")
         nameLabel.text = viewModel.name
         typeLabel.text = (viewModel.gender ?? "") + " " + (viewModel.type ?? "")
     }

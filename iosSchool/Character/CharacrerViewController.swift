@@ -35,13 +35,6 @@ class CharacterViewController<View: CharacterView>: BaseViewController<View> {
                 guard let self else {
                     return
                 }
-                DispatchQueue.main.async {
-                    self.rootView.updateCharacter(url: character.url, with: CharacterCellData(
-                        character: character,
-                        isLoading: true,
-                        image: nil
-                    ))
-                }
                 self.imageService.getImage(url: character.image) { [weak self] image in
                     guard let self else {
                         return
@@ -50,7 +43,7 @@ class CharacterViewController<View: CharacterView>: BaseViewController<View> {
                         self.rootView.updateCharacter(url: character.url, with: CharacterCellData(
                             character: character,
                             isLoading: true,
-                            image: nil
+                            image: image
                         ))
                     }
                 }
