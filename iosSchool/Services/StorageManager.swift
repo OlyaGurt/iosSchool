@@ -6,6 +6,10 @@ protocol StorageManager {
     func saveToken(token: TokenResponse?)
     func getTocken() -> TokenResponse?
     func removeToken()
+    func saveLastLaunchDate()
+    func getLastLaunchDate () -> String?
+    func saveUsername(cabinet: Cabinet?)
+    func getUsername() -> Cabinet?
 }
 
 class StorageManagerImp: StorageManager {
@@ -59,8 +63,43 @@ class StorageManagerImp: StorageManager {
         }
     }
 
+    func saveLastLaunchDate() {
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        let result = dateFormatter.string(from: date)
+        UserDefaults.standard.set(result, forKey: StorageManagerKey.lastLaunch.rawValue)
+    }
 
+    func getLastLaunchDate() -> String? {
+        guard let date = UserDefaults.standard.string(forKey: StorageManagerKey.lastLaunch.rawValue) else {
+            return nil
+        }
+        return date
+    }
 
+    func saveUsername(cabinet: Cabinet?) {
+        guard let cabinet else {
+            return
+        }
+        do {
+            try keychein.set(cabinet.username, key: StorageManagerKey.username.rawValue)
+        } catch {
+            print(error as Any)
+        }
+    }
+
+    func getUsername() -> Cabinet? {
+        do {
+            guard let username = try keychein.get(StorageManagerKey.username.rawValue) else {
+                return nil
+            }
+            return Cabinet(username: username)
+        } catch {
+            print(error as Any)
+        }
+        return nil
+    }
 }
 
 private extension StorageManagerImp {
@@ -69,6 +108,8 @@ private extension StorageManagerImp {
         case notFirstLaunch
         case token
         case userId
+        case lastLaunch
+        case username
     }
 
     struct Constants {
