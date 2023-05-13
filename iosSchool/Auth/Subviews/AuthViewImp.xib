@@ -71,7 +71,8 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="frx-hS-o9U"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" name="Grey60"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XeA-Je-nDV">
@@ -79,8 +80,9 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="Ejo-Zc-cCb"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <color key="textColor" name="Grey60"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="one-time-code"/>
                                                 </textField>
                                             </subviews>
                                         </stackView>
@@ -116,6 +118,19 @@
                                                 </button>
                                             </subviews>
                                         </stackView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAD-af-br2">
+                                            <rect key="frame" x="293" y="531.33333333333337" width="30" height="34.333333333333371"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="vaz-qj-GkG"/>
+                                            </constraints>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="eye.slash" catalog="system">
+                                                <color key="baseForegroundColor" name="GreyForBorder"/>
+                                            </buttonConfiguration>
+                                            <connections>
+                                                <action selector="passwordEyeButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="puf-HY-Ale"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Oc0-Qb-N6o" firstAttribute="top" secondItem="tqQ-8T-zWd" secondAttribute="top" constant="150" id="0oY-uS-iqu"/>
@@ -123,11 +138,13 @@
                                         <constraint firstAttribute="trailing" secondItem="RZC-70-a4G" secondAttribute="trailing" constant="58" id="7kj-yW-h7K"/>
                                         <constraint firstItem="RZC-70-a4G" firstAttribute="leading" secondItem="tqQ-8T-zWd" secondAttribute="leading" constant="58" id="BXz-EL-PFa"/>
                                         <constraint firstItem="Oc0-Qb-N6o" firstAttribute="leading" secondItem="tqQ-8T-zWd" secondAttribute="leading" constant="20" id="RUY-3W-OrN"/>
+                                        <constraint firstItem="LAD-af-br2" firstAttribute="centerY" secondItem="XeA-Je-nDV" secondAttribute="centerY" id="Uzj-he-bzS"/>
                                         <constraint firstItem="wLl-YB-dvs" firstAttribute="leading" secondItem="tqQ-8T-zWd" secondAttribute="leading" id="VnI-77-OI4"/>
                                         <constraint firstAttribute="trailing" secondItem="wLl-YB-dvs" secondAttribute="trailing" id="Wb7-vE-KuT"/>
                                         <constraint firstItem="RZC-70-a4G" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Oc0-Qb-N6o" secondAttribute="bottom" constant="15" id="Z5d-rd-2Fp"/>
                                         <constraint firstAttribute="trailing" secondItem="Oc0-Qb-N6o" secondAttribute="trailing" constant="20" id="lWI-pz-xOd"/>
                                         <constraint firstItem="wLl-YB-dvs" firstAttribute="top" secondItem="RZC-70-a4G" secondAttribute="bottom" priority="250" constant="150" id="vfm-Em-M6q"/>
+                                        <constraint firstAttribute="trailing" secondItem="LAD-af-br2" secondAttribute="trailing" constant="70" id="yG2-WB-jko"/>
                                     </constraints>
                                 </view>
                             </subviews>
@@ -169,6 +186,7 @@
                 <outlet property="helloView" destination="Oc0-Qb-N6o" id="oU8-mT-dKf"/>
                 <outlet property="loginButton" destination="bUG-qb-pbA" id="JbA-8p-NMU"/>
                 <outlet property="loginTextField" destination="Nqx-4T-h2P" id="Kkn-W5-3ve"/>
+                <outlet property="passwordEyeButton" destination="LAD-af-br2" id="hNs-z7-h78"/>
                 <outlet property="passwordTextField" destination="XeA-Je-nDV" id="Ry6-sS-0kY"/>
                 <outlet property="registrationButton" destination="509-ia-cAB" id="U06-Kn-pvM"/>
                 <outlet property="scrollView" destination="A6e-7d-vKH" id="PFq-uy-E3z"/>
@@ -177,15 +195,22 @@
         </view>
     </objects>
     <resources>
-        <image name="background" width="390" height="844"/>
+        <image name="background" width="1024" height="1024"/>
+        <image name="eye.slash" catalog="system" width="128" height="84"/>
+        <namedColor name="Grey60">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="GreyForBorder">
+            <color red="0.48627450980392156" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Lilac50">
-            <color red="0.68235294117647061" green="0.55294117647058827" blue="0.72941176470588232" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.67843137254901964" green="0.55294117647058827" blue="0.72549019607843135" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Lilac80">
-            <color red="0.68235294117647061" green="0.55294117647058827" blue="0.72941176470588232" alpha="0.80000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.67843137254901964" green="0.55294117647058827" blue="0.72549019607843135" alpha="0.80000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="VelvetBlue">
-            <color red="0.32941176470588235" green="0.50588235294117645" blue="0.70588235294117652" alpha="0.69999998807907104" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.32899999618530273" green="0.50599998235702515" blue="0.70599997043609619" alpha="0.69999998807907104" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

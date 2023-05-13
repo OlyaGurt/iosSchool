@@ -22,7 +22,7 @@ class Assembly {
         TabBarController()
     }
 
-    func rootNabigationController() -> UINavigationController {
+    func rootNavigationController() -> UINavigationController {
         let controller = BaseNavigationController()
         controller.modalPresentationStyle = .fullScreen
         return controller

@@ -24,6 +24,7 @@ class AuthViewImp: UIView, AuthView {
     @IBOutlet private var passwordTextField: UITextField!
     @IBOutlet private var loginButton: CustomButton!
     @IBOutlet private var registrationButton: CustomButton!
+    @IBOutlet private weak var passwordEyeButton: UIButton!
 
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -41,15 +42,21 @@ class AuthViewImp: UIView, AuthView {
         helloView.layer.shadowOffset = CGSize(width: 0, height: 8)
         helloView.layer.shadowRadius = 10
 
+        loginTextField.placeholder = data.enterLoginTextFielsPlaceholder
         loginTextField.backgroundColor = .white.withAlphaComponent(0.6)
         loginTextField.layer.cornerRadius = 15
         loginTextField.layer.masksToBounds = true
         loginTextField.delegate = self
+        loginTextField.setLeftPaddingPoints(5)
+        loginTextField.setRightPaddingPoints(5)
 
+        passwordTextField.placeholder = data.enterPasswordTextFielsPlaceholder
         passwordTextField.backgroundColor = .white.withAlphaComponent(0.6)
         passwordTextField.layer.cornerRadius = 15
         passwordTextField.layer.masksToBounds = true
         passwordTextField.delegate = self
+        passwordTextField.setLeftPaddingPoints(5)
+        passwordTextField.setRightPaddingPoints(40)
 
         makeButton(button: loginButton)
         makeButton(button: registrationButton)
@@ -77,6 +84,15 @@ class AuthViewImp: UIView, AuthView {
             login: loginTextField.text ?? "",
             password: passwordTextField.text ?? ""
         )
+    }
+
+    @IBAction func passwordEyeButtonAction(_ sender: Any) {
+        passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
+        if passwordTextField.isSecureTextEntry {
+            passwordEyeButton.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+        } else {
+            passwordEyeButton.setImage(UIImage(systemName: "eye"), for: .normal)
+        }
     }
 
     @objc

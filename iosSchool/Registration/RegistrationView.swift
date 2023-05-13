@@ -3,7 +3,6 @@ import UIKit
 
 protocol RegistrationView: UIView {
     var delegate: RegistrationViewDelegate? { get set }
-    
     func update(with data: RegistrationViewData)
 }
 
@@ -26,6 +25,8 @@ class RegistrationViewImp: UIView, RegistrationView {
     @IBOutlet private weak var repeatPasswordTextField: UITextField!
     @IBOutlet private weak var doneButton: CustomButton!
     @IBOutlet private weak var backButton: CustomButton!
+    @IBOutlet private weak var passwordEyeButton: UIButton!
+    @IBOutlet private weak var repeatPasswordEyeButton: UIButton!
 
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -43,6 +44,8 @@ class RegistrationViewImp: UIView, RegistrationView {
         enterLoginTextField.layer.cornerRadius = 15
         enterLoginTextField.layer.masksToBounds = true
         enterLoginTextField.delegate = self
+        enterLoginTextField.setLeftPaddingPoints(5)
+        enterLoginTextField.setRightPaddingPoints(5)
 
         enterPasswordTextField.placeholder = data.enterPasswordTextFielsPlaceholder
         enterPasswordTextField.textColor = .lightGray
@@ -50,6 +53,8 @@ class RegistrationViewImp: UIView, RegistrationView {
         enterPasswordTextField.layer.cornerRadius = 15
         enterPasswordTextField.layer.masksToBounds = true
         enterPasswordTextField.delegate = self
+        enterPasswordTextField.setLeftPaddingPoints(5)
+        enterPasswordTextField.setRightPaddingPoints(40)
 
         repeatPasswordTextField.placeholder = data.repeatPasswordTextFielsPlaceholder
         repeatPasswordTextField.textColor = .lightGray
@@ -57,6 +62,8 @@ class RegistrationViewImp: UIView, RegistrationView {
         repeatPasswordTextField.layer.cornerRadius = 15
         repeatPasswordTextField.layer.masksToBounds = true
         repeatPasswordTextField.delegate = self
+        repeatPasswordTextField.setLeftPaddingPoints(5)
+        repeatPasswordTextField.setRightPaddingPoints(40)
 
         makeButton(button: doneButton)
         makeButton(button: backButton)
@@ -94,6 +101,24 @@ class RegistrationViewImp: UIView, RegistrationView {
         enterPasswordTextField.resignFirstResponder()
         repeatPasswordTextField.resignFirstResponder()
         delegate?.backButtonDidTap()
+    }
+
+    @IBAction func passwordEyeButtonAction(_ sender: Any) {
+        enterPasswordTextField.isSecureTextEntry = !enterPasswordTextField.isSecureTextEntry
+        if enterPasswordTextField.isSecureTextEntry {
+            passwordEyeButton.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+        } else {
+            passwordEyeButton.setImage(UIImage(systemName: "eye"), for: .normal)
+        }
+    }
+
+    @IBAction func repeatPasswordEyeButtonAction(_ sender: Any) {
+        repeatPasswordTextField.isSecureTextEntry = !repeatPasswordTextField.isSecureTextEntry
+        if repeatPasswordTextField.isSecureTextEntry {
+            repeatPasswordEyeButton.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+        } else {
+            repeatPasswordEyeButton.setImage(UIImage(systemName: "eye"), for: .normal)
+        }
     }
 
     @objc
@@ -150,3 +175,4 @@ extension RegistrationViewImp: UITextFieldDelegate {
         return true
     }
 }
+

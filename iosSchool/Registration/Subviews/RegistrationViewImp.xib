@@ -49,6 +49,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="fMI-oh-ESL"/>
                                                     </constraints>
+                                                    <color key="textColor" name="Grey60"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
@@ -57,16 +58,18 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="bTg-Wd-6d0"/>
                                                     </constraints>
+                                                    <color key="textColor" name="Grey60"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="one-time-code"/>
                                                 </textField>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2X5-hE-5l1">
                                                     <rect key="frame" x="0.0" y="116" width="277" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="hvh-Dm-b5h"/>
                                                     </constraints>
+                                                    <color key="textColor" name="Grey60"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="one-time-code"/>
                                                 </textField>
                                             </subviews>
                                         </stackView>
@@ -103,13 +106,43 @@
                                                 </button>
                                             </subviews>
                                         </stackView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ClT-4i-hIs">
+                                            <rect key="frame" x="293" y="469" width="30" height="34.333333333333314"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="fnS-ge-Gr0"/>
+                                            </constraints>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="eye.slash" catalog="system">
+                                                <color key="baseForegroundColor" name="GreyForBorder"/>
+                                            </buttonConfiguration>
+                                            <connections>
+                                                <action selector="passwordEyeButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="NxR-82-acY"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xuH-HG-efZ">
+                                            <rect key="frame" x="293" y="527" width="30" height="34.333333333333371"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="R8r-ku-oP6"/>
+                                            </constraints>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="eye.slash" catalog="system">
+                                                <color key="baseForegroundColor" name="GreyForBorder"/>
+                                            </buttonConfiguration>
+                                            <connections>
+                                                <action selector="repeatPasswordEyeButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="Wbu-vW-vZ7"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="qtU-is-NRe" secondAttribute="bottom" constant="46" id="46f-3R-CWr"/>
+                                        <constraint firstItem="ClT-4i-hIs" firstAttribute="centerY" secondItem="9J7-Te-6D9" secondAttribute="centerY" id="CzW-a8-nN9"/>
                                         <constraint firstItem="qtU-is-NRe" firstAttribute="top" secondItem="TVD-6Z-rIo" secondAttribute="bottom" priority="250" constant="150" id="DQk-oU-qhD"/>
                                         <constraint firstItem="W5c-Y3-3MI" firstAttribute="leading" secondItem="iPV-zd-TiW" secondAttribute="leading" constant="84" id="HK5-IR-Ji2"/>
                                         <constraint firstAttribute="trailing" secondItem="W5c-Y3-3MI" secondAttribute="trailing" constant="91" id="HY3-P5-fWg"/>
+                                        <constraint firstAttribute="trailing" secondItem="xuH-HG-efZ" secondAttribute="trailing" constant="70" id="TNb-zs-vWL"/>
                                         <constraint firstAttribute="trailing" secondItem="qtU-is-NRe" secondAttribute="trailing" id="X7c-rC-QcH"/>
+                                        <constraint firstAttribute="trailing" secondItem="ClT-4i-hIs" secondAttribute="trailing" constant="70" id="bmg-8d-YYr"/>
+                                        <constraint firstItem="xuH-HG-efZ" firstAttribute="centerY" secondItem="2X5-hE-5l1" secondAttribute="centerY" id="gUi-cn-MAm"/>
                                         <constraint firstItem="W5c-Y3-3MI" firstAttribute="top" secondItem="iPV-zd-TiW" secondAttribute="top" constant="204" id="lYi-fc-1jw"/>
                                         <constraint firstItem="TVD-6Z-rIo" firstAttribute="leading" secondItem="iPV-zd-TiW" secondAttribute="leading" constant="58" id="ono-ba-L8Y"/>
                                         <constraint firstItem="TVD-6Z-rIo" firstAttribute="top" relation="greaterThanOrEqual" secondItem="W5c-Y3-3MI" secondAttribute="bottom" constant="15" id="pTj-Mw-WTQ"/>
@@ -158,7 +191,9 @@
                 <outlet property="enterPasswordTextField" destination="9J7-Te-6D9" id="mvB-SY-Hb6"/>
                 <outlet property="imageView" destination="iHD-zV-JHW" id="sZ0-KF-Iky"/>
                 <outlet property="loginView" destination="TVD-6Z-rIo" id="luo-cR-T8s"/>
+                <outlet property="passwordEyeButton" destination="ClT-4i-hIs" id="ZHh-gr-mUE"/>
                 <outlet property="registrationLabel" destination="2bT-1n-Eel" id="FHy-RC-rmq"/>
+                <outlet property="repeatPasswordEyeButton" destination="xuH-HG-efZ" id="Scx-2k-JHs"/>
                 <outlet property="repeatPasswordTextField" destination="2X5-hE-5l1" id="bZB-wd-6qr"/>
                 <outlet property="scrollView" destination="FqU-Am-TAq" id="TlJ-fM-qdY"/>
             </connections>
@@ -166,10 +201,17 @@
         </view>
     </objects>
     <resources>
-        <image name="background" width="390" height="844"/>
+        <image name="background" width="1024" height="1024"/>
+        <image name="eye.slash" catalog="system" width="128" height="84"/>
         <image name="icon" width="56" height="56"/>
+        <namedColor name="Grey60">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="GreyForBorder">
+            <color red="0.48627450980392156" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Lilac50">
-            <color red="0.68199998140335083" green="0.55299997329711914" blue="0.72899997234344482" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.67843137254901964" green="0.55294117647058827" blue="0.72549019607843135" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="VelvetBlue">
             <color red="0.32899999618530273" green="0.50599998235702515" blue="0.70599997043609619" alpha="0.69999998807907104" colorSpace="custom" customColorSpace="sRGB"/>

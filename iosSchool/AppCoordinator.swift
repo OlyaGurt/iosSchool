@@ -8,6 +8,7 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
 
     func start(window: UIWindow) {
         self.window = window
+        assembly.storageManager.removeToken()
         let coordinator = assembly.splashCoordinator { [weak self] in
             self?.startAuth()
         }
@@ -35,7 +36,7 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
         let locationVC = locationCoordinator.make()
         let cabinetVC = cabinerCoordinator.make()
 
-        let navVC = assembly.rootNabigationController()
+        let navVC = assembly.rootNavigationController()
         navVC.setViewControllers([locationVC], animated: false)
         navVC.tabBarItem = RootTab.locations.tabBarItem
 
