@@ -4,7 +4,7 @@ import KeychainAccess
 protocol StorageManager {
     func cleanKeyChainNeeded()
     func saveToken(token: TokenResponse?)
-    func getTocken() -> TokenResponse?
+    func getToken() -> TokenResponse?
     func removeToken()
     func saveLastLaunchDate()
     func getLastLaunchDate () -> String?
@@ -41,7 +41,7 @@ class StorageManagerImp: StorageManager {
         }
     }
 
-    func getTocken() -> TokenResponse? {
+    func getToken() -> TokenResponse? {
         do {
             guard let token = try keychein.get(StorageManagerKey.token.rawValue),
                   let userId = try keychein.get(StorageManagerKey.userId.rawValue) else {

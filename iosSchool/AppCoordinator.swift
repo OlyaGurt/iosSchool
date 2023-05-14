@@ -16,7 +16,7 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
     }
 
     private func startAuth() {
-        guard assembly.storageManager.getTocken() == nil else {
+        guard assembly.storageManager.getToken() == nil else {
             setTapVC()
             return
         }
