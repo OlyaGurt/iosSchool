@@ -13,6 +13,6 @@ extension Assembly: CabinetAssembly {
     }
 
     func cabinetVC() -> CabinetViewController<CabinetViewImp> {
-        .init()
+        .init(storageManager: storageManager)
     }
 }

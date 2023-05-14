@@ -44,6 +44,7 @@
 		6C246DB32A04A90000568E49 /* CabinetIconCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C246DB22A04A90000568E49 /* CabinetIconCellData.swift */; };
 		6C246DB52A05117D00568E49 /* Cabinet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C246DB42A05117D00568E49 /* Cabinet.swift */; };
 		6C246DB72A05133600568E49 /* CabinetApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C246DB62A05133600568E49 /* CabinetApiClient.swift */; };
+		6C2E0C952A10C71D001F5A82 /* CabinetViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2E0C942A10C71D001F5A82 /* CabinetViewData.swift */; };
 		6C477AFD2A0FA07F001FDAAE /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C477AFC2A0FA07F001FDAAE /* UITextField.swift */; };
 		6C505A0529DFD22000C42414 /* RegistrationViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C505A0429DFD22000C42414 /* RegistrationViewImp.xib */; };
 		6C81EBF429F2BC600094DEBC /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C81EBF229F2BC600094DEBC /* CharacterCell.swift */; };
@@ -131,6 +132,7 @@
 		6C246DB22A04A90000568E49 /* CabinetIconCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabinetIconCellData.swift; sourceTree = "<group>"; };
 		6C246DB42A05117D00568E49 /* Cabinet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cabinet.swift; sourceTree = "<group>"; };
 		6C246DB62A05133600568E49 /* CabinetApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabinetApiClient.swift; sourceTree = "<group>"; };
+		6C2E0C942A10C71D001F5A82 /* CabinetViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabinetViewData.swift; sourceTree = "<group>"; };
 		6C477AFC2A0FA07F001FDAAE /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		6C505A0429DFD22000C42414 /* RegistrationViewImp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewImp.xib; sourceTree = "<group>"; };
 		6C81EBF229F2BC600094DEBC /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
@@ -420,6 +422,7 @@
 				6CEC6ED329E4462C0070CD1A /* CabinetCoordinator.swift */,
 				6CEC6ED529E446420070CD1A /* CabinetAssembly.swift */,
 				6C09AEDE29F3018000C1BA56 /* CabinetView.swift */,
+				6C2E0C942A10C71D001F5A82 /* CabinetViewData.swift */,
 			);
 			path = Cabinet;
 			sourceTree = "<group>";
@@ -627,6 +630,7 @@
 				6CBE3C8529DA997000D656DF /* LocationDataProvider.swift in Sources */,
 				6CEC6EE829EABFAA0070CD1A /* SplashViewData.swift in Sources */,
 				6C09AEFC29F6B05300C1BA56 /* StorageManager.swift in Sources */,
+				6C2E0C952A10C71D001F5A82 /* CabinetViewData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

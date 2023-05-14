@@ -5,7 +5,7 @@ protocol CabinetView: UIView {
 
     var delegate: CabinetViewDelegate? { get set }
 
-    func update()
+    func update(data: CabinetViewData)
     func makeView()
 }
 
@@ -16,12 +16,16 @@ protocol CabinetViewDelegate: AnyObject {
 class CabinetViewImp: UIView, CabinetView {
 
     weak var delegate: CabinetViewDelegate?
+    private var cabinetData: CabinetViewData?
+
 
     private let backgroundView = UIView()
     private let tableView = UITableView()
     private let backButton = CustomButton()
 
-    func update() {
+    func update(data: CabinetViewData) {
+        cabinetData = data
+        tableView.reloadData()
     }
 
     func makeView() {
@@ -120,12 +124,7 @@ extension CabinetViewImp: UITableViewDataSource {
                 withIdentifier: FieldCell.className,
                 for: indexPath
             ) as? FieldCell {
-                let viewModel = FieldCellData(
-                    textLabel: "Дата регистрации",
-                    date: "11.10.2000",
-                    color: nil,
-                    colorIsHidden: true
-                )
+                let viewModel = cabinetData?.fieldCell
                 customCell.viewModel = viewModel
                 return customCell
             }
@@ -135,7 +134,6 @@ extension CabinetViewImp: UITableViewDataSource {
                 for: indexPath
             ) as? FieldCell {
                 let viewModel = FieldCellData(
-                    textLabel: "Цвет профиля",
                     date: nil,
                     color: .blue,
                     colorIsHidden: false

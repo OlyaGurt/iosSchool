@@ -7,8 +7,8 @@ struct FieldCellData {
     let color: UIColor?
     let colorIsHidden: Bool
 
-    init(textLabel: String, date: String?, color: UIColor?, colorIsHidden: Bool) {
-        self.textLabel = textLabel
+    init(date: String?, color: UIColor?, colorIsHidden: Bool) {
+        self.textLabel = colorIsHidden ? "Дата регистрации" : "Цвет профиля"
         self.date = date
         self.color = color
         self.colorIsHidden = colorIsHidden

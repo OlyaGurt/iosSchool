@@ -85,11 +85,6 @@ class LocationViewController<View: LocationView>: BaseViewController<View> {
                 .foregroundColor: UIColor(named: "DarkBlue") ?? .black,
                 .font: UIFont.systemFont(ofSize: 18)
             ]
-//            navigationItem.rightBarButtonItem = UIBarButtonItem(
-//                barButtonSystemItem: .refresh,
-//                target: self,
-//                action: #selector(reload)
-//            )
             navigationItem.rightBarButtonItem = UIBarButtonItem(
                 image: UIImage(named: "reloadIcon"),
                 style: .done,
