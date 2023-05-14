@@ -253,6 +253,14 @@
 			path = Subviews;
 			sourceTree = "<group>";
 		};
+		6C2E0C962A10EC6C001F5A82 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				6CBE3C7B29D71EEF00D656DF /* CustomButton.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 		6C5059FF29DFCFF000C42414 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
@@ -383,6 +391,7 @@
 		6CCEEE6029BF4B9B00A0E661 /* iosSchool */ = {
 			isa = PBXGroup;
 			children = (
+				6C2E0C962A10EC6C001F5A82 /* UIKit */,
 				6CCBB63029ED85B20057B58B /* Services */,
 				6CEC6EE029E98E5E0070CD1A /* Extension */,
 				6CEC6ED029E445F40070CD1A /* Cabinet */,
@@ -400,7 +409,6 @@
 				6CCEEE6F29BF4B9B00A0E661 /* Info.plist */,
 				6C057E4A29C4A62D00BBB0AF /* Assembly.swift */,
 				6C057E5429C8918600BBB0AF /* AppCoordinator.swift */,
-				6CBE3C7B29D71EEF00D656DF /* CustomButton.swift */,
 			);
 			path = iosSchool;
 			sourceTree = "<group>";

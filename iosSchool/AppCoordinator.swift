@@ -8,7 +8,6 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
 
     func start(window: UIWindow) {
         self.window = window
-//        assembly.storageManager.removeToken()
         let coordinator = assembly.splashCoordinator { [weak self] in
             self?.startAuth()
         }

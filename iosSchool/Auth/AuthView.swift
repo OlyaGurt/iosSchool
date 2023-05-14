@@ -20,10 +20,10 @@ class AuthViewImp: UIView, AuthView {
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var helloView: UIView!
     @IBOutlet private weak var helloLabel: UILabel!
-    @IBOutlet private var loginTextField: UITextField!
-    @IBOutlet private var passwordTextField: UITextField!
-    @IBOutlet private var loginButton: CustomButton!
-    @IBOutlet private var registrationButton: CustomButton!
+    @IBOutlet private weak var loginTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var loginButton: CustomButton!
+    @IBOutlet private weak var registrationButton: CustomButton!
     @IBOutlet private weak var passwordEyeButton: UIButton!
 
     deinit {
@@ -41,6 +41,7 @@ class AuthViewImp: UIView, AuthView {
         helloView.layer.shadowOpacity = 0.25
         helloView.layer.shadowOffset = CGSize(width: 0, height: 8)
         helloView.layer.shadowRadius = 10
+        helloView.layer.cornerRadius = 20
 
         loginTextField.placeholder = data.enterLoginTextFielsPlaceholder
         loginTextField.backgroundColor = .white.withAlphaComponent(0.6)

@@ -39,7 +39,6 @@ class RegistrationViewImp: UIView, RegistrationView {
         registrationLabel.text = data.registrationTextFieldPlaceholder
 
         enterLoginTextField.placeholder = data.enterLoginTextFielsPlaceholder
-        enterLoginTextField.textColor = .lightGray
         enterLoginTextField.backgroundColor = .white.withAlphaComponent(0.6)
         enterLoginTextField.layer.cornerRadius = 15
         enterLoginTextField.layer.masksToBounds = true
@@ -48,7 +47,6 @@ class RegistrationViewImp: UIView, RegistrationView {
         enterLoginTextField.setRightPaddingPoints(5)
 
         enterPasswordTextField.placeholder = data.enterPasswordTextFielsPlaceholder
-        enterPasswordTextField.textColor = .lightGray
         enterPasswordTextField.backgroundColor = .white.withAlphaComponent(0.6)
         enterPasswordTextField.layer.cornerRadius = 15
         enterPasswordTextField.layer.masksToBounds = true
@@ -57,7 +55,6 @@ class RegistrationViewImp: UIView, RegistrationView {
         enterPasswordTextField.setRightPaddingPoints(40)
 
         repeatPasswordTextField.placeholder = data.repeatPasswordTextFielsPlaceholder
-        repeatPasswordTextField.textColor = .lightGray
         repeatPasswordTextField.backgroundColor = .white.withAlphaComponent(0.6)
         repeatPasswordTextField.layer.cornerRadius = 15
         repeatPasswordTextField.layer.masksToBounds = true
