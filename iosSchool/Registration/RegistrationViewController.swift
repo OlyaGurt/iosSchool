@@ -1,4 +1,5 @@
 import UIKit
+import SPIndicator
 
 class RegistrationViewController<View: RegistrationView>: BaseViewController<View> {
 
@@ -29,12 +30,18 @@ extension RegistrationViewController: RegistrationViewDelegate {
         }
         dataProvider.registration(username: login, password: password) { [weak self] result in
             switch result {
-            case .success(let response):
-                print("success")
-                print(response)
+            case .success:
+                DispatchQueue.main.async {
+                    SPIndicator.present(title: "Успешная регистрация", preset: .done, haptic: .success)
+                    self?.dismiss(animated: true)
+                }
             case .failure(let failure):
-                print(failure.rawValue)
-                print("fail")
+                DispatchQueue.main.async {
+                    SPIndicator.present(
+                        title: "Ошибка регистрации: \(failure.rawValue)",
+                        preset: .error,
+                        haptic: .error
+                    )}
             }
         }
     }
