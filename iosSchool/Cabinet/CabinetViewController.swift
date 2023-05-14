@@ -3,9 +3,12 @@ import UIKit
 
 class CabinetViewController<View: CabinetView>: BaseViewController<View> {
 
+    var escapeToAuth: (() -> Void)?
+
     private var storageManager: StorageManager
 
-    init(storageManager: StorageManager) {
+    init(escapeToAuth: (() -> Void)?, storageManager: StorageManager) {
+        self.escapeToAuth = escapeToAuth
         self.storageManager = storageManager
         super.init(nibName: nil, bundle: nil)
     }
@@ -18,6 +21,7 @@ class CabinetViewController<View: CabinetView>: BaseViewController<View> {
         super.viewDidLoad()
         rootView.backgroundColor = .white
         rootView.makeView()
+        rootView.delegate = self
         rootView.update(data: CabinetViewData(fieldCell: FieldCellData(
             date: storageManager.getLastLaunchDate(),
             color: nil,
@@ -28,5 +32,7 @@ class CabinetViewController<View: CabinetView>: BaseViewController<View> {
 
 extension CabinetViewController: CabinetViewDelegate {
     func backButtonDidTap() {
+        storageManager.removeToken()
+        self.escapeToAuth?()
     }
 }

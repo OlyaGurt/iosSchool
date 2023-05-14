@@ -31,7 +31,9 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
     private func setTapVC() {
         let tabVC = assembly.rootTabBarController()
         let locationCoordinator = assembly.locationCoordinator()
-        let cabinerCoordinator = assembly.cabinetCoodrinator()
+        let cabinerCoordinator = assembly.cabinetCoodrinator {
+            self.startAuth()
+        }
 
         let locationVC = locationCoordinator.make()
         let cabinetVC = cabinerCoordinator.make()

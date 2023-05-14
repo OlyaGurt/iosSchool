@@ -18,7 +18,6 @@ class CabinetViewImp: UIView, CabinetView {
     weak var delegate: CabinetViewDelegate?
     private var cabinetData: CabinetViewData?
 
-
     private let backgroundView = UIView()
     private let tableView = UITableView()
     private let backButton = CustomButton()
@@ -30,6 +29,7 @@ class CabinetViewImp: UIView, CabinetView {
 
     func makeView() {
         makeBackgroundView()
+        
 
         self.backgroundColor = .white
         tableView.separatorStyle = .none
@@ -92,7 +92,7 @@ class CabinetViewImp: UIView, CabinetView {
 
 // MARK: - ObjFunctions
 
-    @objc func backButtonDidTap(sender: UIButton) {
+    @objc func backButtonDidTap() {
         delegate?.backButtonDidTap()
     }
 }

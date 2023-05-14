@@ -175,4 +175,3 @@ extension RegistrationViewImp: UITextFieldDelegate {
         return true
     }
 }
-
