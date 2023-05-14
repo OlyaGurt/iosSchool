@@ -29,7 +29,6 @@ class CabinetViewImp: UIView, CabinetView {
 
     func makeView() {
         makeBackgroundView()
-        
 
         self.backgroundColor = .white
         tableView.separatorStyle = .none
