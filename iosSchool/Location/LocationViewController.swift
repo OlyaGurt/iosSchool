@@ -4,9 +4,9 @@ import SPIndicator
 class LocationViewController<View: LocationView>: BaseViewController<View> {
 
     var selectLocation: ((LocationCellData) -> Void)?
-    var page: Int = 1
-    var cellsVM: [LocationCellData] = []
-    var pagesLimited: Bool = false
+    private var page: Int = 1
+    private var cellsVM: [LocationCellData] = []
+    private var pagesLimited: Bool = false
     private let dataProvider: LocationDataProvider
 
     init(dataProvider: LocationDataProvider) {
@@ -20,6 +20,7 @@ class LocationViewController<View: LocationView>: BaseViewController<View> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        SPIndicator.present(title: "Успешный вход", preset: .done, haptic: .success)
 
         setupBar()
         rootView.makeView()
@@ -80,16 +81,16 @@ class LocationViewController<View: LocationView>: BaseViewController<View> {
     }
 
     private func setupBar() {
-            title = "Выбор планеты"
-            navigationController?.navigationBar.titleTextAttributes = [
-                .foregroundColor: UIColor(named: "DarkBlue") ?? .black,
-                .font: UIFont.systemFont(ofSize: 18)
-            ]
-            navigationItem.rightBarButtonItem = UIBarButtonItem(
-                image: UIImage(named: "reloadIcon"),
-                style: .done,
-                target: self,
-                action: #selector(reload)
-            )
-        }
+        title = "Выбор планеты"
+        navigationController?.navigationBar.titleTextAttributes = [
+            .foregroundColor: UIColor(named: "DarkBlue") ?? .black,
+            .font: UIFont.systemFont(ofSize: 18)
+        ]
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: UIImage(named: "reloadIcon"),
+            style: .done,
+            target: self,
+            action: #selector(reload)
+        )
+    }
 }

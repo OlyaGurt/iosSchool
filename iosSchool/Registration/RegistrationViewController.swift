@@ -3,10 +3,15 @@ import SPIndicator
 
 class RegistrationViewController<View: RegistrationView>: BaseViewController<View> {
 
-    private let dataProvider: RegistrationDataProdiver
+    var onRegistrationSuccess: (() -> Void)?
 
-    init(dataProvider: RegistrationDataProdiver) {
+    private let dataProvider: RegistrationDataProdiver
+    private let storageManager: StorageManager
+
+    init(onRegistrationSuccess: (() -> Void)?, dataProvider: RegistrationDataProdiver, storageManager: StorageManager) {
+        self.onRegistrationSuccess = onRegistrationSuccess
         self.dataProvider = dataProvider
+        self.storageManager = storageManager
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -30,10 +35,10 @@ extension RegistrationViewController: RegistrationViewDelegate {
         }
         dataProvider.registration(username: login, password: password) { [weak self] result in
             switch result {
-            case .success:
+            case .success(let token):
                 DispatchQueue.main.async {
-                    SPIndicator.present(title: "Успешная регистрация", preset: .done, haptic: .success)
-                    self?.dismiss(animated: true)
+                    self?.storageManager.saveToken(token: token)
+                    self?.onRegistrationSuccess?()
                 }
             case .failure(let failure):
                 DispatchQueue.main.async {
