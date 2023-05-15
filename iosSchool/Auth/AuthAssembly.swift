@@ -15,6 +15,6 @@ extension Assembly: AuthAssembly {
     }
 
     func authDataProvider() -> AuthDataProvider {
-        AuthDataProviderImp(apiClient: apiClient)
+        AuthDataProviderImp(apiClient: apiClient, cabinetApiClient: apiClient)
     }
 }

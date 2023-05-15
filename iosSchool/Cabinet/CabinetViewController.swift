@@ -22,17 +22,20 @@ class CabinetViewController<View: CabinetView>: BaseViewController<View> {
         rootView.backgroundColor = .white
         rootView.makeView()
         rootView.delegate = self
-        rootView.update(data: CabinetViewData(fieldCell: FieldCellData(
-            date: storageManager.getLastLaunchDate(),
-            color: nil,
-            colorIsHidden: true
-        )))
+        rootView.update(data: CabinetViewData(
+            loginCell: LoginLabelCellData(loginLabel: storageManager.getUsername()),
+            fieldCell: FieldCellData(
+                date: storageManager.getLastLaunchDate(),
+                color: nil,
+                colorIsHidden: true
+            )))
     }
 }
 
 extension CabinetViewController: CabinetViewDelegate {
     func backButtonDidTap() {
         storageManager.removeToken()
+        storageManager.removeUsername()
         self.escapeToAuth?()
     }
 }

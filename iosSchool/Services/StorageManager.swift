@@ -9,7 +9,8 @@ protocol StorageManager {
     func saveLastLaunchDate()
     func getLastLaunchDate () -> String?
     func saveUsername(cabinet: Cabinet?)
-    func getUsername() -> Cabinet?
+    func getUsername() -> String?
+    func removeUsername()
 }
 
 class StorageManagerImp: StorageManager {
@@ -89,16 +90,24 @@ class StorageManagerImp: StorageManager {
         }
     }
 
-    func getUsername() -> Cabinet? {
+    func getUsername() -> String? {
         do {
             guard let username = try keychein.get(StorageManagerKey.username.rawValue) else {
                 return nil
             }
-            return Cabinet(username: username)
+            return username
         } catch {
             print(error as Any)
         }
         return nil
+    }
+
+    func removeUsername() {
+        do {
+            try keychein.remove(StorageManagerKey.username.rawValue)
+        } catch {
+            print(error as Any)
+        }
     }
 }
 

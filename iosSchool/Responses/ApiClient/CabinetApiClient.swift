@@ -12,7 +12,7 @@ extension ApiClient: CabinetApiClient {
         cabinetId: String,
         onRequestComplited: @escaping (Result<Cabinet, ApiError>) -> Void
     ) {
-        let url = NetworkConstants.URLStrings.nanoPost + "/v1/posts/" + cabinetId
+        let url = NetworkConstants.URLStrings.nanoPost + "/v1/profile/" + cabinetId
         performRequest(url: url, data: nil, method: .get, onRequestCompleted: onRequestComplited)
     }
 }

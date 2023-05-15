@@ -38,6 +38,7 @@ extension RegistrationViewController: RegistrationViewDelegate {
             case .success(let token):
                 DispatchQueue.main.async {
                     self?.storageManager.saveToken(token: token)
+                    self?.storageManager.saveUsername(cabinet: Cabinet(username: login))
                     self?.onRegistrationSuccess?()
                 }
             case .failure(let failure):

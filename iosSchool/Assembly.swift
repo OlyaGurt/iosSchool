@@ -7,6 +7,10 @@ class Assembly {
         ApiClient()
     }
 
+    var cabinetApiClien: ApiClient {
+        ApiClient()
+    }
+
     lazy var imageService: ImageService = ImageServiceImp(apiClient: apiClient)
     lazy var storageManager: StorageManager = StorageManagerImp()
 

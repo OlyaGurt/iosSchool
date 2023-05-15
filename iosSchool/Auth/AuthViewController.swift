@@ -42,6 +42,14 @@ extension AuthViewController: AuthViewDelegate {
             switch result {
             case .success(let token):
                 self?.storageManager.saveToken(token: token)
+                self?.dataProvider.getCabinet(cabinetId: login) { [weak self] result in
+                    switch result {
+                    case .success(let cabinet):
+                        self?.storageManager.saveUsername(cabinet: cabinet)
+                    case .failure:
+                        self?.storageManager.saveUsername(cabinet: Cabinet(username: "Логин пользователя"))
+                    }
+                }
                 self?.onLoginSuccess?()
             case .failure:
                 DispatchQueue.main.async {

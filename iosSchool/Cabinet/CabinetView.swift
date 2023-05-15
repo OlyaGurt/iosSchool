@@ -116,6 +116,8 @@ extension CabinetViewImp: UITableViewDataSource {
                 withIdentifier: LoginLabelCell.className,
                 for: indexPath
             ) as? LoginLabelCell {
+                let viewModel = cabinetData?.loginCell
+                customCell.viewModel = viewModel
                 return customCell
             }
         case 2:
