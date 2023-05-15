@@ -42,7 +42,7 @@ class CharacterViewController<View: CharacterView>: BaseViewController<View> {
                     DispatchQueue.main.async {
                         self.rootView.updateCharacter(url: character.url, with: CharacterCellData(
                             character: character,
-                            isLoading: true,
+                            isLoading: false,
                             image: image
                         ))
                     }

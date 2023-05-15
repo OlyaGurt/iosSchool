@@ -11,6 +11,8 @@ class CharacterCell: UICollectionViewCell {
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var typeLabel: UILabel!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var blurView: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,8 +24,20 @@ class CharacterCell: UICollectionViewCell {
         guard let viewModel else {
             return
         }
-        imageView.image = viewModel.isLoading ? viewModel.image : UIImage(named: "character1")
-        nameLabel.text = viewModel.name
-        typeLabel.text = (viewModel.gender ?? "") + " " + (viewModel.type ?? "")
+        if viewModel.isLoading {
+            activityIndicator.startAnimating()
+            imageView.image = UIImage(named: "character1")
+            nameLabel.isHidden = true
+            typeLabel.isHidden = true
+        } else {
+            imageView.image = viewModel.image
+            activityIndicator.stopAnimating()
+            activityIndicator.isHidden = true
+            blurView.isHidden = true
+            nameLabel.isHidden = false
+            typeLabel.isHidden = false
+            nameLabel.text = viewModel.name
+            typeLabel.text = (viewModel.gender ?? "") + " " + (viewModel.type ?? "")
+        }
     }
 }
