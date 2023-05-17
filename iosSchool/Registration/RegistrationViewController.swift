@@ -1,5 +1,6 @@
 import UIKit
 import SPIndicator
+import PKHUD
 
 class RegistrationViewController<View: RegistrationView>: BaseViewController<View> {
 
@@ -31,9 +32,18 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
 extension RegistrationViewController: RegistrationViewDelegate {
     func registrationButtonDidTap(login: String, password: String, repeatPassword: String) {
         guard password == repeatPassword else {
+            SPIndicator.present(
+                title: "Пароли не совпадают",
+                preset: .error,
+                haptic: .error
+            )
             return
         }
+        HUD.show(.progress)
         dataProvider.registration(username: login, password: password) { [weak self] result in
+            DispatchQueue.main.async {
+                HUD.hide()
+            }
             switch result {
             case .success(let token):
                 DispatchQueue.main.async {
@@ -47,7 +57,8 @@ extension RegistrationViewController: RegistrationViewDelegate {
                         title: "Ошибка регистрации: \(failure.rawValue)",
                         preset: .error,
                         haptic: .error
-                    )}
+                    )
+                }
             }
         }
     }

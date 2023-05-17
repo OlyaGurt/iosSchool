@@ -1,5 +1,6 @@
 import UIKit
 import SPIndicator
+import PKHUD
 
 class LocationViewController<View: LocationView>: BaseViewController<View> {
 
@@ -20,8 +21,6 @@ class LocationViewController<View: LocationView>: BaseViewController<View> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        SPIndicator.present(title: "Успешный вход", preset: .done, haptic: .success)
-
         setupBar()
         rootView.makeView()
         rootView.selectLocation = selectLocation
@@ -54,9 +53,13 @@ class LocationViewController<View: LocationView>: BaseViewController<View> {
         guard !pagesLimited else {
             return
         }
+        HUD.show(.progress)
         dataProvider.location(page: page) { [weak self] result in
             guard let self else {
                 return
+            }
+            DispatchQueue.main.async {
+                HUD.hide()
             }
             switch result {
             case .success(let data):

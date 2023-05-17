@@ -24,16 +24,17 @@ class CharacterCell: UICollectionViewCell {
         guard let viewModel else {
             return
         }
+        blurView.isHidden = !viewModel.isLoading
         if viewModel.isLoading {
             activityIndicator.startAnimating()
             imageView.image = UIImage(named: "character1")
+            activityIndicator.isHidden = false
             nameLabel.isHidden = true
             typeLabel.isHidden = true
         } else {
             imageView.image = viewModel.image
             activityIndicator.stopAnimating()
             activityIndicator.isHidden = true
-            blurView.isHidden = true
             nameLabel.isHidden = false
             typeLabel.isHidden = false
             nameLabel.text = viewModel.name

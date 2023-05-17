@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+import SPIndicator
 
 struct CoordinatorContext {}
 
@@ -22,6 +23,7 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
         let coordinator = assembly.authCoordinator { [ weak self] in
             DispatchQueue.main.async {
                 self?.setTapVC()
+                SPIndicator.present(title: "Успешный вход", preset: .done, haptic: .success)
             }
         }
         setRoot(viewController: coordinator.make())
