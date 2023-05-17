@@ -4,7 +4,6 @@ protocol AuthAssembly {
     func authCoordinator(onLoginSuccess: (() -> Void)?) -> AuthCoordinator
     func authVC(onLoginSuccess: (() -> Void)?) -> AuthViewController<AuthViewImp>
     func authDataProvider() -> AuthDataProvider
-    func cabinetDataProvider() -> CabinetDataProvider
 }
 
 extension Assembly: AuthAssembly {
@@ -21,9 +20,5 @@ extension Assembly: AuthAssembly {
 
     func authDataProvider() -> AuthDataProvider {
         AuthDataProviderImp(apiClient: apiClient)
-    }
-
-    func cabinetDataProvider() -> CabinetDataProvider {
-        CabinetDataProviderImp(apiClient: apiClient)
     }
 }

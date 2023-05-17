@@ -4,6 +4,7 @@ import UIKit
 protocol CabinetAssembly {
     func cabinetCoodrinator(escapeToAuth: (() -> Void)?) -> CabinetCoordinator
     func cabinetVC(escapeToAuth: (() -> Void)?) -> CabinetViewController<CabinetViewImp>
+    func cabinetDataProvider() -> CabinetDataProvider
 }
 
 extension Assembly: CabinetAssembly {
@@ -14,5 +15,9 @@ extension Assembly: CabinetAssembly {
 
     func cabinetVC(escapeToAuth: (() -> Void)?) -> CabinetViewController<CabinetViewImp> {
         .init(escapeToAuth: escapeToAuth, storageManager: storageManager)
+    }
+
+    func cabinetDataProvider() -> CabinetDataProvider {
+        CabinetDataProviderImp(apiClient: apiClient)
     }
 }
